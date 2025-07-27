@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X, Code2, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -19,34 +21,52 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-800">
+    <header className="sticky top-0 z-50 bg-coder-white/95 dark:bg-coder-black/95 backdrop-blur-sm border-b border-coder-yellow/20">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-2 text-xl font-bold text-purple-400">
+          <Link to="/" className="flex items-center space-x-2 text-xl font-bold font-mono text-coder-yellow hover:animate-glow transition-all duration-300">
             <Code2 className="h-8 w-8" />
-            <span>TheCodeStation</span>
+            <span className="bracket-highlight">TheCodeStation</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-purple-400 ${
-                  location.pathname === item.href ? 'text-purple-400' : 'text-gray-300'
+                className={`text-sm font-mono font-medium transition-all duration-300 hover:text-coder-yellow hover:shadow-glow px-2 py-1 ${
+                  location.pathname === item.href 
+                    ? 'text-coder-yellow border-b border-coder-yellow' 
+                    : 'text-coder-black dark:text-coder-white'
                 }`}
               >
                 {item.name}
               </Link>
             ))}
+            
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-none border border-coder-yellow/30 text-coder-yellow hover:bg-coder-yellow hover:text-coder-black transition-all duration-300 hover:shadow-glow"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-none border border-coder-yellow/30 text-coder-yellow hover:bg-coder-yellow hover:text-coder-black transition-all duration-300"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-purple-400"
+              className="text-coder-black dark:text-coder-white hover:text-coder-yellow transition-colors duration-300"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -56,15 +76,15 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-slate-800 rounded-lg mt-2">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-coder-white dark:bg-coder-black border border-coder-yellow/20 mt-2">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  className={`block px-3 py-2 text-sm font-mono font-medium transition-all duration-300 ${
                     location.pathname === item.href
-                      ? 'text-purple-400 bg-slate-700'
-                      : 'text-gray-300 hover:text-purple-400 hover:bg-slate-700'
+                      ? 'text-coder-yellow bg-coder-yellow/10'
+                      : 'text-coder-black dark:text-coder-white hover:text-coder-yellow hover:bg-coder-yellow/5'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >

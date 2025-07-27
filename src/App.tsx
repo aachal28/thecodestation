@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from './contexts/ThemeContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -14,25 +15,27 @@ import Blogs from './pages/Blogs';
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-slate-900 text-white">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/posts" element={<RecentPosts />} />
-            <Route path="/projects" element={<GitHubProjects />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/newsletter" element={<Newsletter />} />
-            <Route path="/blogs" element={<Blogs />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <div className="min-h-screen bg-coder-white dark:bg-coder-black text-coder-black dark:text-coder-white transition-colors duration-300">
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/posts" element={<RecentPosts />} />
+              <Route path="/projects" element={<GitHubProjects />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/resources" element={<Resources />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/newsletter" element={<Newsletter />} />
+              <Route path="/blogs" element={<Blogs />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 
