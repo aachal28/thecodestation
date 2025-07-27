@@ -97,12 +97,14 @@ const Blogs = () => {
   const regularBlogs = filteredBlogs.filter(blog => !blog.featured);
 
   return (
-    <div className="py-16">
+    <div className="py-16 animate-fade-in">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <section className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">Developer Blog</h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        <section className="text-center mb-16 animate-on-scroll">
+          <h1 className="text-4xl sm:text-5xl font-bold font-mono mb-4 text-coder-black dark:text-coder-white">
+            <span className="bracket-highlight">Developer</span> <span className="terminal-prompt">Blog</span>
+          </h1>
+          <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 max-w-3xl mx-auto font-mono">
             In-depth articles, tutorials, and insights on web development, AI tools, freelancing, and everything that helps developers grow.
           </p>
         </section>
@@ -114,10 +116,8 @@ const Blogs = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-lg font-medium transition-colors ${
-                  selectedCategory === category
-                    ? 'bg-purple-600 text-white'
-                    : 'bg-slate-800 text-gray-300 hover:bg-slate-700'
+                className={`px-6 py-3 font-mono font-medium transition-all duration-300 ${
+                  selectedCategory === category ? 'btn-primary' : 'btn-secondary'
                 }`}
               >
                 {category}
@@ -129,30 +129,30 @@ const Blogs = () => {
         {/* Featured Articles */}
         {selectedCategory === 'All' && (
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-8">Featured Articles</h2>
+            <h2 className="text-3xl font-bold font-mono mb-8 terminal-prompt">Featured Articles</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {featuredBlogs.slice(0, 2).map((blog) => (
-                <article key={blog.id} className="bg-slate-800 rounded-2xl overflow-hidden hover:bg-slate-700 transition-colors cursor-pointer">
-                  <div className="h-48 bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                    <span className="text-white font-semibold">{blog.thumbnail}</span>
+                <article key={blog.id} className="card overflow-hidden cursor-pointer">
+                  <div className="h-48 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center">
+                    <span className="text-coder-black font-mono font-semibold">{blog.thumbnail}</span>
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-4 mb-4">
-                      <span className="px-3 py-1 bg-purple-600/20 text-purple-400 rounded-full text-sm">
+                      <span className="px-3 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-sm font-mono">
                         {blog.category}
                       </span>
-                      <div className="flex items-center text-gray-400 text-sm">
+                      <div className="flex items-center text-coder-gray-600 dark:text-coder-gray-400 text-sm font-mono">
                         <Calendar className="h-4 w-4 mr-1" />
                         {new Date(blog.date).toLocaleDateString()}
                       </div>
-                      <div className="flex items-center text-gray-400 text-sm">
+                      <div className="flex items-center text-coder-gray-600 dark:text-coder-gray-400 text-sm font-mono">
                         <Clock className="h-4 w-4 mr-1" />
                         {blog.readTime}
                       </div>
                     </div>
-                    <h3 className="text-xl font-semibold mb-3 text-white">{blog.title}</h3>
-                    <p className="text-gray-300 mb-4">{blog.excerpt}</p>
-                    <button className="flex items-center text-purple-400 hover:text-purple-300 font-medium">
+                    <h3 className="text-xl font-semibold font-mono mb-3 text-coder-black dark:text-coder-white bracket-highlight">{blog.title}</h3>
+                    <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-4 font-mono text-sm">{blog.excerpt}</p>
+                    <button className="flex items-center text-coder-yellow hover:text-coder-yellow/80 font-mono font-medium transition-colors duration-300">
                       Read More
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </button>
@@ -166,29 +166,31 @@ const Blogs = () => {
         {/* All Articles Grid */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8">
-            {selectedCategory === 'All' ? 'Latest Articles' : `${selectedCategory} Articles`}
+            <span className="font-mono terminal-prompt">
+              {selectedCategory === 'All' ? 'Latest Articles' : `${selectedCategory} Articles`}
+            </span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {(selectedCategory === 'All' ? regularBlogs : filteredBlogs).map((blog) => (
-              <article key={blog.id} className="bg-slate-800 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 cursor-pointer">
-                <div className="h-40 bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                  <span className="text-white font-semibold text-sm">{blog.thumbnail}</span>
+              <article key={blog.id} className="card overflow-hidden cursor-pointer">
+                <div className="h-40 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center">
+                  <span className="text-coder-black font-mono font-semibold text-sm">{blog.thumbnail}</span>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="px-2 py-1 bg-purple-600/20 text-purple-400 rounded text-sm">
+                    <span className="px-2 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-sm font-mono">
                       {blog.category}
                     </span>
-                    <span className="text-gray-400 text-sm">{blog.readTime}</span>
+                    <span className="text-coder-gray-600 dark:text-coder-gray-400 text-sm font-mono">{blog.readTime}</span>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-white line-clamp-2">{blog.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4 line-clamp-3">{blog.excerpt}</p>
+                  <h3 className="text-lg font-semibold font-mono mb-2 text-coder-black dark:text-coder-white line-clamp-2">{blog.title}</h3>
+                  <p className="text-coder-gray-600 dark:text-coder-gray-400 text-sm mb-4 line-clamp-3 font-mono">{blog.excerpt}</p>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center text-gray-400 text-xs">
+                    <div className="flex items-center text-coder-gray-600 dark:text-coder-gray-400 text-xs font-mono">
                       <Calendar className="h-3 w-3 mr-1" />
                       {new Date(blog.date).toLocaleDateString()}
                     </div>
-                    <button className="text-purple-400 hover:text-purple-300 text-sm font-medium">
+                    <button className="text-coder-yellow hover:text-coder-yellow/80 text-sm font-mono font-medium transition-colors duration-300">
                       Read →
                     </button>
                   </div>
@@ -200,18 +202,18 @@ const Blogs = () => {
 
         {/* Load More */}
         <section className="text-center mb-16">
-          <button className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-lg transition-colors">
+          <button className="btn-secondary">
             Load More Articles
           </button>
         </section>
 
         {/* Newsletter CTA */}
-        <section className="text-center bg-gradient-to-r from-purple-900 to-pink-900 rounded-2xl p-8">
-          <h2 className="text-2xl font-bold mb-4">Never Miss a New Article</h2>
-          <p className="text-gray-200 mb-6 max-w-2xl mx-auto">
+        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8">
+          <h2 className="text-2xl font-bold font-mono mb-4 bracket-highlight">Never Miss a New Article</h2>
+          <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 max-w-2xl mx-auto font-mono">
             Join our newsletter to get weekly summaries of the latest blog posts, plus exclusive content and early access to new articles.
           </p>
-          <button className="px-8 py-4 bg-white text-purple-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+          <button className="btn-primary">
             Join Newsletter for Weekly Summaries
           </button>
         </section>

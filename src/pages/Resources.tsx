@@ -94,17 +94,19 @@ const Resources = () => {
 
   const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Thanks! Check your email for the developer toolkit download link.');
+    alert('> Access granted! Check your email for the developer toolkit download link.');
     setEmail('');
   };
 
   return (
-    <div className="py-16">
+    <div className="py-16 animate-fade-in">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <section className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">Developer Resources</h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        <section className="text-center mb-16 animate-on-scroll">
+          <h1 className="text-4xl sm:text-5xl font-bold font-mono mb-4 text-coder-black dark:text-coder-white">
+            <span className="bracket-highlight">Developer</span> <span className="terminal-prompt">Resources</span>
+          </h1>
+          <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 max-w-3xl mx-auto font-mono">
             Curated collection of the best tools, templates, and resources to supercharge your development workflow.
           </p>
         </section>
@@ -116,10 +118,8 @@ const Resources = () => {
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`flex items-center px-6 py-3 rounded-lg font-medium transition-colors ${
-                  selectedCategory === category.id
-                    ? 'bg-purple-600 text-white'
-                    : 'bg-slate-800 text-gray-300 hover:bg-slate-700'
+                className={`flex items-center px-6 py-3 font-mono font-medium transition-all duration-300 ${
+                  selectedCategory === category.id ? 'btn-primary' : 'btn-secondary'
                 }`}
               >
                 {category.icon}
@@ -133,26 +133,26 @@ const Resources = () => {
         <section className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredResources.map((resource) => (
-              <div key={resource.id} className="bg-slate-800 rounded-xl p-6 hover:bg-slate-700 transition-colors">
+              <div key={resource.id} className="card p-6">
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-white">{resource.title}</h3>
+                  <h3 className="text-lg font-semibold font-mono text-coder-black dark:text-coder-white bracket-highlight">{resource.title}</h3>
                   <div className="flex items-center">
-                    {resource.locked && <Lock className="h-4 w-4 text-yellow-400 mr-2" />}
-                    <span className={`px-2 py-1 rounded text-xs font-semibold ${
-                      resource.type === 'Free' ? 'bg-green-600/20 text-green-400' :
-                      resource.type === 'Paid' ? 'bg-blue-600/20 text-blue-400' :
-                      'bg-purple-600/20 text-purple-400'
+                    {resource.locked && <Lock className="h-4 w-4 text-coder-yellow mr-2" />}
+                    <span className={`px-2 py-1 text-xs font-mono font-semibold border ${
+                      resource.type === 'Free' ? 'bg-green-600/20 text-green-400 border-green-400/30' :
+                      resource.type === 'Paid' ? 'bg-blue-600/20 text-blue-400 border-blue-400/30' :
+                      'bg-coder-yellow/20 text-coder-yellow border-coder-yellow/30'
                     }`}>
                       {resource.type}
                     </span>
                   </div>
                 </div>
-                <p className="text-gray-300 mb-4">{resource.description}</p>
+                <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-4 font-mono text-sm">{resource.description}</p>
                 <button
-                  className={`w-full py-3 rounded-lg font-medium transition-colors flex items-center justify-center ${
+                  className={`w-full py-3 font-mono font-medium transition-all duration-300 flex items-center justify-center ${
                     resource.locked
-                      ? 'bg-slate-700 text-gray-400 cursor-not-allowed'
-                      : 'bg-purple-600 hover:bg-purple-700 text-white'
+                      ? 'bg-transparent border border-coder-gray-600/30 text-coder-gray-600 dark:text-coder-gray-400 cursor-not-allowed'
+                      : 'btn-primary'
                   }`}
                   disabled={resource.locked}
                 >
@@ -174,9 +174,9 @@ const Resources = () => {
         </section>
 
         {/* Unlock CTA */}
-        <section className="bg-gradient-to-r from-purple-900 to-pink-900 rounded-2xl p-8 md:p-12 text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Unlock the Full Vault</h2>
-          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+        <section className="bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12 text-center mb-16">
+          <h2 className="text-3xl font-bold font-mono mb-4 bracket-highlight">Unlock the Full Vault</h2>
+          <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">
             Get instant access to all premium resources, templates, and tools by joining our developer community.
           </p>
           <form onSubmit={handleEmailSubmit} className="max-w-md mx-auto">
@@ -186,12 +186,12 @@ const Resources = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                className="input-field flex-1"
                 required
               />
               <button
                 type="submit"
-                className="px-8 py-4 bg-white text-purple-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center"
+                className="btn-primary flex items-center justify-center"
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Unlock All
@@ -201,12 +201,12 @@ const Resources = () => {
         </section>
 
         {/* Toolkit CTA */}
-        <section className="text-center bg-slate-800 rounded-2xl p-8">
-          <h2 className="text-2xl font-bold mb-4">Download Free Developer Toolkit</h2>
-          <p className="text-gray-300 mb-6">
+        <section className="text-center card p-8">
+          <h2 className="text-2xl font-bold font-mono mb-4 terminal-prompt">Download Free Developer Toolkit</h2>
+          <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 font-mono">
             Get started with our essential collection of free tools and resources for modern web development.
           </p>
-          <button className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">
+          <button className="btn-primary">
             Download Toolkit
           </button>
         </section>
