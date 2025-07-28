@@ -6,85 +6,55 @@ const Resources = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const categories = [
-    { id: 'all', name: 'All Resources', icon: <Wrench className="h-5 w-5" /> },
-    { id: 'ai-tools', name: 'AI Tools', icon: <Bot className="h-5 w-5" /> },
-    { id: 'dev-tools', name: 'Dev Tools', icon: <Wrench className="h-5 w-5" /> },
-    { id: 'pdfs', name: 'PDFs', icon: <FileText className="h-5 w-5" /> },
-    { id: 'templates', name: 'Templates', icon: <Layout className="h-5 w-5" /> },
+    { id: 'all', name: 'All', icon: <Wrench className="h-5 w-5" /> },
+    { id: 'ai', name: 'AI', icon: <Bot className="h-5 w-5" /> },
+    { id: 'dev', name: 'Dev', icon: <Wrench className="h-5 w-5" /> },
+    { id: 'no-code', name: 'No-code', icon: <Layout className="h-5 w-5" /> },
+    { id: 'productivity', name: 'Productivity', icon: <FileText className="h-5 w-5" /> },
   ];
 
   const resources = [
     {
       id: 1,
-      title: 'ChatGPT Code Assistant',
-      category: 'ai-tools',
-      description: 'AI-powered coding assistant for faster development',
-      type: 'Free',
-      url: '#',
+      title: 'ChatGPT',
+      category: 'ai',
+      description: 'AI-powered coding assistant',
       locked: false,
     },
     {
       id: 2,
-      title: 'GitHub Copilot',
-      category: 'ai-tools',
-      description: 'AI pair programmer that suggests whole lines of code',
-      type: 'Paid',
-      url: '#',
-      locked: false,
+      title: 'VS Code Extensions Pack',
+      category: 'dev',
+      description: 'Essential extensions for developers',
+      locked: true,
     },
     {
       id: 3,
-      title: 'VS Code Extensions Pack',
-      category: 'dev-tools',
-      description: 'Essential VS Code extensions for web developers',
-      type: 'Free',
-      url: '#',
+      title: 'Notion Templates',
+      category: 'productivity',
+      description: 'Project management templates',
       locked: true,
     },
     {
       id: 4,
-      title: 'React Cheatsheet',
-      category: 'pdfs',
-      description: 'Complete React hooks and concepts reference',
-      type: 'Premium',
-      url: '#',
-      locked: true,
-    },
-    {
-      id: 5,
-      title: 'Landing Page Template',
-      category: 'templates',
-      description: 'Modern, responsive landing page template',
-      type: 'Premium',
-      url: '#',
-      locked: true,
-    },
-    {
-      id: 6,
-      title: 'CSS Grid Generator',
-      category: 'dev-tools',
-      description: 'Visual tool for creating CSS Grid layouts',
-      type: 'Free',
-      url: '#',
+      title: 'Webflow',
+      category: 'no-code',
+      description: 'Visual web development platform',
       locked: false,
     },
     {
-      id: 7,
-      title: 'JavaScript ES6+ Guide',
-      category: 'pdfs',
-      description: 'Modern JavaScript features and best practices',
-      type: 'Premium',
-      url: '#',
-      locked: true,
+      id: 5,
+      title: 'GitHub Copilot',
+      category: 'ai',
+      description: 'AI pair programmer',
+      locked: false,
     },
     {
-      id: 8,
-      title: 'Portfolio Template',
-      category: 'templates',
-      description: 'Professional developer portfolio template',
-      type: 'Premium',
-      url: '#',
-      locked: true,
+      id: 6,
+      title: 'Figma',
+      category: 'dev',
+      description: 'Design and prototyping tool',
+      locked: false,
     },
   ];
 
@@ -94,7 +64,7 @@ const Resources = () => {
 
   const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('> Access granted! Check your email for the developer toolkit download link.');
+    alert('> Access granted! Check your email for the developer toolkit.');
     setEmail('');
   };
 
@@ -102,12 +72,12 @@ const Resources = () => {
     <div className="py-16 animate-fade-in">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <section className="text-center mb-16 animate-on-scroll">
+        <section className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold font-mono mb-4 text-coder-black dark:text-coder-white">
             <span className="bracket-highlight">Developer</span> <span className="terminal-prompt">Resources</span>
           </h1>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 max-w-3xl mx-auto font-mono">
-            Curated collection of the best tools, templates, and resources to supercharge your development workflow.
+            Curated collection of the best tools and resources to supercharge your development workflow.
           </p>
         </section>
 
@@ -136,16 +106,7 @@ const Resources = () => {
               <div key={resource.id} className="card p-6">
                 <div className="flex items-start justify-between mb-4">
                   <h3 className="text-lg font-semibold font-mono text-coder-black dark:text-coder-white bracket-highlight">{resource.title}</h3>
-                  <div className="flex items-center">
-                    {resource.locked && <Lock className="h-4 w-4 text-coder-yellow mr-2" />}
-                    <span className={`px-2 py-1 text-xs font-mono font-semibold border ${
-                      resource.type === 'Free' ? 'bg-green-600/20 text-green-400 border-green-400/30' :
-                      resource.type === 'Paid' ? 'bg-blue-600/20 text-blue-400 border-blue-400/30' :
-                      'bg-coder-yellow/20 text-coder-yellow border-coder-yellow/30'
-                    }`}>
-                      {resource.type}
-                    </span>
-                  </div>
+                  {resource.locked && <Lock className="h-4 w-4 text-coder-yellow" />}
                 </div>
                 <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-4 font-mono text-sm">{resource.description}</p>
                 <button
@@ -159,12 +120,11 @@ const Resources = () => {
                   {resource.locked ? (
                     <>
                       <Lock className="mr-2 h-4 w-4" />
-                      Unlock with Email
+                      Locked
                     </>
                   ) : (
                     <>
-                      <Download className="mr-2 h-4 w-4" />
-                      Access Now
+                      Try
                     </>
                   )}
                 </button>
@@ -173,11 +133,11 @@ const Resources = () => {
           </div>
         </section>
 
-        {/* Unlock CTA */}
-        <section className="bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12 text-center mb-16">
-          <h2 className="text-3xl font-bold font-mono mb-4 bracket-highlight">Unlock the Full Vault</h2>
+        {/* Download CTA */}
+        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12">
+          <h2 className="text-3xl font-bold font-mono mb-4 bracket-highlight">Download Free Developer Toolkit</h2>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">
-            Get instant access to all premium resources, templates, and tools by joining our developer community.
+            Get instant access to checklists, Notion freebies, and downloadable guides.
           </p>
           <form onSubmit={handleEmailSubmit} className="max-w-md mx-auto">
             <div className="flex flex-col sm:flex-row gap-4">
@@ -193,22 +153,11 @@ const Resources = () => {
                 type="submit"
                 className="btn-primary flex items-center justify-center"
               >
-                <Mail className="mr-2 h-5 w-5" />
-                Unlock All
+                <Download className="mr-2 h-5 w-5" />
+                Download
               </button>
             </div>
           </form>
-        </section>
-
-        {/* Toolkit CTA */}
-        <section className="text-center card p-8">
-          <h2 className="text-2xl font-bold font-mono mb-4 terminal-prompt">Download Free Developer Toolkit</h2>
-          <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 font-mono">
-            Get started with our essential collection of free tools and resources for modern web development.
-          </p>
-          <button className="btn-primary">
-            Download Toolkit
-          </button>
         </section>
       </div>
     </div>

@@ -11,11 +11,10 @@ const Header = () => {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Posts', href: '/posts' },
-    { name: 'Projects', href: '/projects' },
     { name: 'Services', href: '/services' },
     { name: 'Resources', href: '/resources' },
     { name: 'Products', href: '/products' },
+    { name: 'My Station', href: '/my-station' },
     { name: 'Newsletter', href: '/newsletter' },
     { name: 'Blogs', href: '/blogs' },
   ];

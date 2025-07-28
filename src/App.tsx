@@ -5,13 +5,12 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import RecentPosts from './pages/RecentPosts';
-import GitHubProjects from './pages/GitHubProjects';
 import Services from './pages/Services';
 import Resources from './pages/Resources';
 import Products from './pages/Products';
 import Newsletter from './pages/Newsletter';
 import Blogs from './pages/Blogs';
+import MyStation from './pages/MyStation';
 
 function App() {
   return (
@@ -23,11 +22,10 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/posts" element={<RecentPosts />} />
-              <Route path="/projects" element={<GitHubProjects />} />
               <Route path="/services" element={<Services />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/products" element={<Products />} />
+              <Route path="/my-station" element={<MyStation />} />
               <Route path="/newsletter" element={<Newsletter />} />
               <Route path="/blogs" element={<Blogs />} />
             </Routes>
