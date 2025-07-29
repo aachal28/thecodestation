@@ -8,22 +8,22 @@ const Footer = () => {
         <div className="text-center">
           {/* Social Links */}
           <div className="flex justify-center space-x-6 mb-8">
-            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30">
+            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl">
               <Mail className="h-6 w-6" />
             </a>
-            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30">
+            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl">
               <Instagram className="h-6 w-6" />
             </a>
-            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30">
+            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl">
               <Youtube className="h-6 w-6" />
             </a>
-            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30">
+            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl">
               <Linkedin className="h-6 w-6" />
             </a>
-            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30">
+            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl">
               <Twitter className="h-6 w-6" />
             </a>
-            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30">
+            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl">
               <Github className="h-6 w-6" />
             </a>
           </div>

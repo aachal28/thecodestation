@@ -72,7 +72,7 @@ const MyStation = () => {
             <ul className="space-y-3">
               {favSongs.map((song, index) => (
                 <li key={index} className="flex items-center text-coder-gray-600 dark:text-coder-gray-400 font-mono">
-                  <span className="w-6 h-6 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow text-sm flex items-center justify-center mr-4">
+                  <span className="w-6 h-6 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow text-sm flex items-center justify-center mr-4 rounded-lg">
                     {index + 1}
                   </span>
                   {song}
@@ -91,7 +91,7 @@ const MyStation = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {favBooks.map((book, index) => (
               <div key={index} className="card p-6">
-                <div className="h-32 bg-coder-yellow/20 border border-coder-yellow/30 flex items-center justify-center mb-4">
+                <div className="h-32 bg-coder-yellow/20 border border-coder-yellow/30 flex items-center justify-center mb-4 rounded-xl">
                   <Book className="h-8 w-8 text-coder-yellow" />
                 </div>
                 <h3 className="font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">{book.title}</h3>
@@ -132,7 +132,7 @@ const MyStation = () => {
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-semibold font-mono text-coder-black dark:text-coder-white bracket-highlight">{tool.name}</h3>
                   {tool.affiliate && (
-                    <span className="px-2 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-xs font-mono">
+                    <span className="px-2 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-xs font-mono rounded-full">
                       Affiliate
                     </span>
                   )}
@@ -155,8 +155,8 @@ const MyStation = () => {
           <div className="card p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {deskSetup.map((item, index) => (
-                <div key={index} className="flex items-center p-4 bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20">
-                  <span className="w-2 h-2 bg-coder-yellow mr-3"></span>
+                <div key={index} className="flex items-center p-4 bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 rounded-xl">
+                  <span className="w-2 h-2 bg-coder-yellow mr-3 rounded-full"></span>
                   <span className="font-mono text-coder-black dark:text-coder-white">{item}</span>
                 </div>
               ))}
@@ -173,7 +173,7 @@ const MyStation = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {collaborations.map((brand, index) => (
               <div key={index} className="card p-6 text-center">
-                <div className="h-16 bg-coder-yellow/20 border border-coder-yellow/30 flex items-center justify-center mb-2">
+                <div className="h-16 bg-coder-yellow/20 border border-coder-yellow/30 flex items-center justify-center mb-2 rounded-xl">
                   <span className="font-mono text-sm text-coder-yellow">{brand}</span>
                 </div>
               </div>
@@ -201,7 +201,7 @@ const MyStation = () => {
         </section>
 
         {/* Book a Call */}
-        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-12">
+        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-12 rounded-3xl">
           <Calendar className="h-16 w-16 text-coder-yellow mx-auto mb-6" />
           <h2 className="text-3xl font-bold font-mono mb-4 bracket-highlight">Book a Call</h2>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">

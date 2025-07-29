@@ -39,7 +39,7 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Who I Am */}
         <section className="text-center mb-16">
-          <div className="w-32 h-32 bg-coder-yellow mx-auto mb-8 flex items-center justify-center">
+          <div className="w-32 h-32 bg-coder-yellow mx-auto mb-8 flex items-center justify-center rounded-3xl shadow-soft">
             <span className="text-4xl font-bold font-mono text-coder-black">AP</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold font-mono mb-4 text-coder-black dark:text-coder-white">
@@ -52,7 +52,7 @@ const About = () => {
 
         {/* My Mission */}
         <section className="mb-16">
-          <div className="bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12 text-center">
+          <div className="bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12 text-center rounded-3xl">
             <h2 className="text-3xl font-bold font-mono mb-6 bracket-highlight">My Mission</h2>
             <p className="text-2xl text-coder-gray-600 dark:text-coder-gray-400 font-mono">
               "To simplify tech & help coders grow faster."
@@ -82,7 +82,7 @@ const About = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {collaborations.map((brand, index) => (
               <div key={index} className="card p-4 text-center">
-                <div className="h-16 bg-coder-yellow/20 border border-coder-yellow/30 flex items-center justify-center mb-2">
+                <div className="h-16 bg-coder-yellow/20 border border-coder-yellow/30 flex items-center justify-center mb-2 rounded-xl">
                   <span className="font-mono text-sm text-coder-yellow">{brand}</span>
                 </div>
               </div>
@@ -96,11 +96,11 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <div key={project.id} className="card p-6">
-                <div className="h-40 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center mb-4">
+                <div className="h-40 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center mb-4 rounded-xl">
                   <span className="text-coder-black font-mono font-semibold">Screenshot</span>
                 </div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="px-3 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-sm font-mono">
+                  <span className="px-3 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-sm font-mono rounded-full">
                     {project.category}
                   </span>
                   <div className="flex items-center text-coder-gray-600 dark:text-coder-gray-400 text-sm font-mono">
@@ -112,19 +112,19 @@ const About = () => {
                 <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-4 font-mono text-sm">{project.description}</p>
                 <div className="flex gap-2">
                   {project.links.live && (
-                    <a href={project.links.live} className="flex items-center px-3 py-2 bg-coder-yellow text-coder-black font-mono text-sm transition-all duration-300 hover:shadow-glow">
+                    <a href={project.links.live} className="flex items-center px-3 py-2 bg-coder-yellow text-coder-black font-mono text-sm transition-all duration-300 hover:shadow-glow rounded-lg">
                       <ExternalLink className="h-4 w-4 mr-1" />
                       Live
                     </a>
                   )}
                   {project.links.github && (
-                    <a href={project.links.github} className="flex items-center px-3 py-2 bg-transparent border border-coder-yellow/30 text-coder-yellow font-mono text-sm transition-all duration-300 hover:bg-coder-yellow hover:text-coder-black">
+                    <a href={project.links.github} className="flex items-center px-3 py-2 bg-transparent border border-coder-yellow/30 text-coder-yellow font-mono text-sm transition-all duration-300 hover:bg-coder-yellow hover:text-coder-black rounded-lg">
                       <Github className="h-4 w-4 mr-1" />
                       Code
                     </a>
                   )}
                   {project.links.case && (
-                    <a href={project.links.case} className="flex items-center px-3 py-2 bg-transparent border border-coder-yellow/30 text-coder-yellow font-mono text-sm transition-all duration-300 hover:bg-coder-yellow hover:text-coder-black">
+                    <a href={project.links.case} className="flex items-center px-3 py-2 bg-transparent border border-coder-yellow/30 text-coder-yellow font-mono text-sm transition-all duration-300 hover:bg-coder-yellow hover:text-coder-black rounded-lg">
                       Case Study
                     </a>
                   )}

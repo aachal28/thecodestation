@@ -34,19 +34,25 @@ const Home = () => {
             {/* Quick Link Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
               <Link to="/resources" className="card p-6 text-center hover:scale-105 transition-all duration-300">
-                <Wrench className="h-12 w-12 text-coder-yellow mx-auto mb-4" />
+                <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow rounded-2xl w-fit mx-auto mb-4">
+                  <Wrench className="h-8 w-8" />
+                </div>
                 <h3 className="text-xl font-semibold font-mono mb-2 bracket-highlight">Tools</h3>
                 <p className="text-coder-gray-600 dark:text-coder-gray-400 font-mono text-sm">Curated developer resources</p>
               </Link>
               
               <Link to="/products" className="card p-6 text-center hover:scale-105 transition-all duration-300">
-                <ShoppingCart className="h-12 w-12 text-coder-yellow mx-auto mb-4" />
+                <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow rounded-2xl w-fit mx-auto mb-4">
+                  <ShoppingCart className="h-8 w-8" />
+                </div>
                 <h3 className="text-xl font-semibold font-mono mb-2 bracket-highlight">Products</h3>
                 <p className="text-coder-gray-600 dark:text-coder-gray-400 font-mono text-sm">Digital products & templates</p>
               </Link>
               
               <Link to="/blogs" className="card p-6 text-center hover:scale-105 transition-all duration-300">
-                <BookOpen className="h-12 w-12 text-coder-yellow mx-auto mb-4" />
+                <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow rounded-2xl w-fit mx-auto mb-4">
+                  <BookOpen className="h-8 w-8" />
+                </div>
                 <h3 className="text-xl font-semibold font-mono mb-2 bracket-highlight">Blogs</h3>
                 <p className="text-coder-gray-600 dark:text-coder-gray-400 font-mono text-sm">Tutorials & insights</p>
               </Link>
@@ -63,7 +69,7 @@ const Home = () => {
             {recentPosts.map((post) => (
               <div key={post.id} className="card p-6">
                 <div className="flex items-center mb-4">
-                  <div className="p-2 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mr-3">
+                  <div className="p-2 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow rounded-xl mr-3">
                     {post.icon}
                   </div>
                   <span className="text-sm font-mono text-coder-yellow">{post.type}</span>
@@ -79,7 +85,7 @@ const Home = () => {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-20 bg-coder-yellow/10 dark:bg-coder-yellow/5 border-t border-b border-coder-yellow/20">
+      <section className="py-20 bg-coder-yellow/10 dark:bg-coder-yellow/5 border-t border-b border-coder-yellow/20 mx-4 rounded-3xl">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold font-mono mb-4 bracket-highlight">Join My Weekly Newsletter</h2>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">

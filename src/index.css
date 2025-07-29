@@ -20,19 +20,19 @@
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 bg-transparent border-2 border-coder-yellow text-coder-yellow font-mono font-medium rounded-none transition-all duration-300 hover:bg-coder-yellow hover:text-coder-black hover:shadow-glow transform hover:scale-105;
+    @apply px-6 py-3 bg-transparent border-2 border-coder-yellow text-coder-yellow font-mono font-medium rounded-xl transition-all duration-300 hover:bg-coder-yellow hover:text-coder-black hover:shadow-glow transform hover:scale-105;
   }
   
   .btn-secondary {
-    @apply px-6 py-3 bg-coder-black border-2 border-coder-yellow text-coder-yellow font-mono font-medium rounded-none transition-all duration-300 hover:bg-coder-yellow hover:text-coder-black hover:shadow-glow;
+    @apply px-6 py-3 bg-coder-black border-2 border-coder-yellow text-coder-yellow font-mono font-medium rounded-xl transition-all duration-300 hover:bg-coder-yellow hover:text-coder-black hover:shadow-glow;
   }
   
   .card {
-    @apply bg-white dark:bg-coder-black border border-coder-gray-200 dark:border-coder-yellow/20 rounded-none shadow-card transition-all duration-300 hover:shadow-card-hover hover:border-coder-yellow/50 hover:-translate-y-1;
+    @apply bg-white dark:bg-coder-black border border-coder-gray-200 dark:border-coder-yellow/20 rounded-2xl shadow-soft transition-all duration-300 hover:shadow-soft-lg hover:border-coder-yellow/50 hover:-translate-y-2;
   }
   
   .input-field {
-    @apply w-full px-4 py-3 bg-transparent border-b-2 border-coder-gray-300 dark:border-coder-yellow/30 text-coder-black dark:text-coder-white font-mono placeholder-coder-gray-500 focus:outline-none focus:border-coder-yellow transition-colors duration-300;
+    @apply w-full px-4 py-3 bg-transparent border-2 border-coder-gray-300 dark:border-coder-yellow/30 text-coder-black dark:text-coder-white font-mono placeholder-coder-gray-500 focus:outline-none focus:border-coder-yellow transition-colors duration-300 rounded-xl;
   }
   
   .section-divider {
@@ -40,7 +40,19 @@
   }
   
   .code-block {
-    @apply bg-coder-gray-100 dark:bg-coder-black border border-coder-yellow/20 p-4 font-mono text-sm rounded-none;
+    @apply bg-coder-gray-100 dark:bg-coder-black border border-coder-yellow/20 p-4 font-mono text-sm rounded-xl;
+  }
+  
+  .icon-container {
+    @apply p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow rounded-xl transition-all duration-300 hover:bg-coder-yellow hover:text-coder-black;
+  }
+  
+  .tag {
+    @apply px-3 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-sm font-mono rounded-full;
+  }
+  
+  .avatar {
+    @apply w-32 h-32 bg-coder-yellow flex items-center justify-center rounded-3xl shadow-soft;
   }
   
   .terminal-prompt::before {
