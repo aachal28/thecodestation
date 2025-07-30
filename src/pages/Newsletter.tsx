@@ -54,7 +54,7 @@ const Newsletter = () => {
               { icon: <Target className="h-6 w-6" />, title: 'Cheat Sheets', desc: 'Quick reference guides' },
             ].map((item, index) => (
               <div key={index} className="card p-6 text-center">
-                <div className="p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mx-auto mb-4 w-fit rounded-xl">
+                <div className="p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mx-auto mb-4 w-fit">
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">{item.title}</h3>
@@ -90,7 +90,7 @@ const Newsletter = () => {
 
         {/* Newsletter Signup */}
         <section className="mb-16">
-          <div className="max-w-2xl mx-auto text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12 rounded-3xl">
+          <div className="max-w-2xl mx-auto text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12">
             <h2 className="text-3xl font-bold font-mono mb-6 bracket-highlight">Join the Free Vault</h2>
             <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 font-mono">
               Get instant access to exclusive resources plus weekly insights that actually matter.

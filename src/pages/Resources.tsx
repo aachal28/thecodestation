@@ -112,7 +112,7 @@ const Resources = () => {
                 <button
                   className={`w-full py-3 font-mono font-medium transition-all duration-300 flex items-center justify-center ${
                     resource.locked
-                      ? 'bg-transparent border border-coder-gray-600/30 text-coder-gray-600 dark:text-coder-gray-400 cursor-not-allowed rounded-xl'
+                      ? 'bg-transparent border border-coder-gray-600/30 text-coder-gray-600 dark:text-coder-gray-400 cursor-not-allowed'
                       : 'btn-primary'
                   }`}
                   disabled={resource.locked}
@@ -134,7 +134,7 @@ const Resources = () => {
         </section>
 
         {/* Download CTA */}
-        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12 rounded-3xl">
+        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12">
           <h2 className="text-3xl font-bold font-mono mb-4 bracket-highlight">Download Free Developer Toolkit</h2>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">
             Get instant access to checklists, Notion freebies, and downloadable guides.

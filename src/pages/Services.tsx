@@ -54,7 +54,7 @@ const Services = () => {
             {services.map((service, index) => (
               <div key={index} className="card p-8">
                 <div className="flex items-center mb-6">
-                  <div className="p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mr-4 rounded-xl">
+                  <div className="p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mr-4">
                     {service.icon}
                   </div>
                   <h3 className="text-xl font-bold font-mono text-coder-black dark:text-coder-white bracket-highlight">{service.title}</h3>
@@ -82,7 +82,7 @@ const Services = () => {
               { step: '04', title: 'Delivery', desc: 'You receive exceptional results' },
             ].map((item, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-coder-yellow flex items-center justify-center text-coder-black font-mono font-bold text-xl mx-auto mb-4 border border-coder-yellow rounded-2xl">
+                <div className="w-16 h-16 bg-coder-yellow flex items-center justify-center text-coder-black font-mono font-bold text-xl mx-auto mb-4 border border-coder-yellow">
                   {item.step}
                 </div>
                 <h4 className="text-lg font-semibold font-mono mb-2 text-coder-black dark:text-coder-white">{item.title}</h4>
@@ -93,7 +93,7 @@ const Services = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-12 rounded-3xl">
+        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-12">
           <h2 className="text-3xl font-bold font-mono mb-4 terminal-prompt">Ready to Get Started?</h2>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">
             Let's discuss how we can work together to achieve your goals. Book a free consultation call today.

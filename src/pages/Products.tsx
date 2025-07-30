@@ -91,7 +91,7 @@ const Products = () => {
             {products.map((product) => (
               <div key={product.id} className="card overflow-hidden">
                 {/* Product Image */}
-                <div className="h-48 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center rounded-t-2xl">
+                <div className="h-48 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center">
                   <div className="text-coder-black text-center">
                     {product.icon}
                     <p className="mt-2 font-mono font-semibold">Product Image</p>
@@ -113,7 +113,7 @@ const Products = () => {
                     className={`w-full py-3 font-mono font-semibold transition-all duration-300 flex items-center justify-center ${
                       product.available
                         ? 'btn-primary'
-                        : 'bg-transparent border border-coder-gray-600/30 text-coder-gray-600 dark:text-coder-gray-400 cursor-not-allowed rounded-xl'
+                        : 'bg-transparent border border-coder-gray-600/30 text-coder-gray-600 dark:text-coder-gray-400 cursor-not-allowed'
                     }`}
                     disabled={!product.available}
                   >

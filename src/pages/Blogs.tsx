@@ -1,33 +1,12 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
-import { getBlogPosts, NotionBlog } from '../lib/notion';
 
 const Blogs = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [blogs, setBlogs] = useState<NotionBlog[]>([]);
-  const [loading, setLoading] = useState(true);
 
   const categories = ['All', 'Tutorials & Tips', 'Book Reviews', 'Learning Journey', 'Monthly Roundups'];
 
-  // Load blogs from Notion on component mount
-  React.useEffect(() => {
-    const loadBlogs = async () => {
-      try {
-        const notionBlogs = await getBlogPosts();
-        setBlogs(notionBlogs);
-      } catch (error) {
-        console.error('Error loading blogs:', error);
-        // Fallback to mock data
-        setBlogs(getMockBlogs());
-      } finally {
-        setLoading(false);
-      }
-    };
-    
-    loadBlogs();
-  }, []);
-
-  const getMockBlogs = (): NotionBlog[] => [
+  const blogs = [
     {
       id: 1,
       title: 'How to Master React Hooks in 2024',
@@ -86,7 +65,7 @@ const Blogs = () => {
 
   const filteredBlogs = selectedCategory === 'All' 
     ? blogs 
-    : blogs.filter(blog => blog.category === selectedCategory);
+    : blogs.filter((blog: any) => blog.category === selectedCategory);
 
   return (
     <div className="py-16 animate-fade-in">
@@ -120,16 +99,10 @@ const Blogs = () => {
 
         {/* Blog Grid */}
         <section className="mb-16">
-          {loading ? (
-            <div className="text-center py-12">
-              <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-coder-yellow"></div>
-              <p className="mt-4 text-coder-gray-600 dark:text-coder-gray-400 font-mono">Loading blogs...</p>
-            </div>
-          ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredBlogs.map((blog) => (
+            {filteredBlogs.map((blog: any) => (
               <article key={blog.id} className="card overflow-hidden cursor-pointer">
-                <div className="h-48 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center rounded-t-2xl">
+                <div className="h-48 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center">
                   <span className="text-coder-black font-mono font-semibold">{blog.thumbnail}</span>
                 </div>
                 <div className="p-6">
@@ -158,11 +131,10 @@ const Blogs = () => {
               </article>
             ))}
           </div>
-          )}
         </section>
 
         {/* Newsletter CTA */}
-        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 rounded-3xl">
+        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8">
           <h2 className="text-2xl font-bold font-mono mb-4 bracket-highlight">Join Newsletter for Weekly Summaries</h2>
           <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 max-w-2xl mx-auto font-mono">
             Get weekly summaries of the latest blog posts, plus exclusive content and early access to new articles.
