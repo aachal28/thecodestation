@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,94 +10,93 @@
   
   body {
     font-family: 'Inter', system-ui, sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .font-mono {
-    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+    line-height: 1.6;
   }
 }
 
 @layer components {
+  /* Card Components */
+  .card {
+    @apply bg-coder-white dark:bg-coder-gray-900 border border-coder-gray-200 dark:border-coder-gray-800 shadow-card transition-all duration-300 hover:shadow-card-hover hover:border-coder-yellow/30;
+  }
+  
+  /* Button Components */
   .btn-primary {
-    @apply px-6 py-3 bg-transparent border-2 border-coder-yellow text-coder-yellow font-mono font-medium transition-all duration-300 hover:bg-coder-yellow hover:text-coder-black hover:shadow-glow transform hover:scale-105;
+    @apply px-6 py-3 bg-coder-yellow text-coder-black font-medium font-mono transition-all duration-300 hover:bg-coder-yellow/90 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-coder-yellow/50 active:scale-95;
   }
   
   .btn-secondary {
-    @apply px-6 py-3 bg-coder-black border-2 border-coder-yellow text-coder-yellow font-mono font-medium transition-all duration-300 hover:bg-coder-yellow hover:text-coder-black hover:shadow-glow;
+    @apply px-6 py-3 bg-transparent border border-coder-gray-300 dark:border-coder-gray-700 text-coder-black dark:text-coder-white font-medium font-mono transition-all duration-300 hover:border-coder-yellow hover:text-coder-yellow hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-coder-yellow/50;
   }
   
-  .card {
-    @apply bg-white dark:bg-coder-black border border-coder-gray-200 dark:border-coder-yellow/20 shadow-soft transition-all duration-300 hover:shadow-soft-lg hover:border-coder-yellow/50 hover:-translate-y-2;
-  }
-  
+  /* Input Components */
   .input-field {
-    @apply w-full px-4 py-3 bg-transparent border-2 border-coder-gray-300 dark:border-coder-yellow/30 text-coder-black dark:text-coder-white font-mono placeholder-coder-gray-500 focus:outline-none focus:border-coder-yellow transition-colors duration-300;
+    @apply w-full px-4 py-3 bg-coder-white dark:bg-coder-gray-900 border border-coder-gray-300 dark:border-coder-gray-700 text-coder-black dark:text-coder-white font-mono placeholder-coder-gray-500 focus:outline-none focus:border-coder-yellow focus:ring-1 focus:ring-coder-yellow transition-colors duration-300;
   }
   
-  .section-divider {
-    @apply w-full h-px bg-gradient-to-r from-transparent via-coder-yellow to-transparent my-16;
-  }
-  
-  .code-block {
-    @apply bg-coder-gray-100 dark:bg-coder-black border border-coder-yellow/20 p-4 font-mono text-sm;
-  }
-  
-  .icon-container {
-    @apply p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow transition-all duration-300 hover:bg-coder-yellow hover:text-coder-black;
-  }
-  
-  .tag {
-    @apply px-3 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-sm font-mono;
-  }
-  
-  .avatar {
-    @apply w-32 h-32 bg-coder-yellow flex items-center justify-center shadow-soft;
+  /* Typography Components */
+  .terminal-prompt {
+    @apply text-coder-yellow;
   }
   
   .terminal-prompt::before {
     content: '> ';
-    @apply text-coder-yellow font-mono;
+    @apply text-coder-yellow;
+  }
+  
+  .bracket-highlight {
+    @apply text-coder-black dark:text-coder-white;
   }
   
   .bracket-highlight::before {
-    content: '{ ';
-    @apply text-coder-yellow font-mono;
+    content: '[';
+    @apply text-coder-yellow;
   }
   
   .bracket-highlight::after {
-    content: ' }';
-    @apply text-coder-yellow font-mono;
-  }
-}
-
-@layer utilities {
-  .text-gradient {
-    @apply bg-gradient-to-r from-coder-yellow to-coder-yellow/80 bg-clip-text text-transparent;
+    content: ']';
+    @apply text-coder-yellow;
   }
   
+  /* Animation Components */
   .animate-on-scroll {
-    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+    @apply opacity-0 translate-y-4 transition-all duration-700;
   }
   
   .animate-on-scroll.visible {
     @apply opacity-100 translate-y-0;
   }
+  
+  /* Terminal Box */
+  .terminal-box {
+    @apply bg-coder-gray-950 border border-coder-gray-800 font-mono text-sm p-4 relative;
+  }
+  
+  .terminal-box::before {
+    content: '';
+    @apply absolute top-3 left-3 w-3 h-3 bg-red-500 rounded-full;
+  }
+  
+  .terminal-box::after {
+    content: '';
+    @apply absolute top-3 left-7 w-3 h-3 bg-coder-yellow rounded-full;
+  }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-coder-gray-100 dark:bg-coder-black;
+  @apply bg-coder-gray-100 dark:bg-coder-gray-900;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-coder-yellow;
+  @apply bg-coder-gray-400 dark:bg-coder-gray-600 hover:bg-coder-yellow;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-coder-yellow/80;
+/* Selection */
+::selection {
+  @apply bg-coder-yellow text-coder-black;
 }
