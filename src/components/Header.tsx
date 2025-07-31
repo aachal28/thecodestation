@@ -20,52 +20,63 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 dark:bg-coder-black/80 backdrop-blur-md border-b border-coder-gray-200 dark:border-coder-gray-800">
+    <header className="sticky top-0 z-50 bg-terminal-black/90 backdrop-blur-md border-b border-terminal-yellow/20">
       <nav className="container-content">
-        <div className="flex justify-between items-center h-14">
-          <Link to="/" className="flex items-center space-x-2 text-lg font-display font-semibold text-coder-gray-900 dark:text-coder-gray-100 hover:text-coder-yellow transition-colors duration-200">
-            <Terminal className="h-5 w-5 text-coder-yellow" />
-            <span>TheCodeStation</span>
+        <div className="flex justify-between items-center h-16">
+          <Link to="/" className="flex items-center space-x-2 text-lg font-mono font-bold text-terminal-white hover:text-terminal-yellow transition-colors duration-300">
+            <Terminal className="h-6 w-6 text-terminal-yellow" />
+            <span className="terminal-path">TheCodeStation</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-coder-yellow px-2 py-1 ${
+                className={`text-sm font-mono font-medium transition-all duration-300 hover:text-terminal-yellow relative group ${
                   location.pathname === item.href 
-                    ? 'text-coder-yellow' 
-                    : 'text-coder-gray-600 dark:text-coder-gray-400'
+                    ? 'text-terminal-yellow' 
+                    : 'text-terminal-white/80'
                 }`}
               >
                 {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-terminal-yellow transition-all duration-300 group-hover:w-full group-hover:shadow-glow"></span>
               </Link>
             ))}
             
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 text-coder-gray-600 dark:text-coder-gray-400 hover:text-coder-yellow transition-colors duration-200"
+              className="flex items-center space-x-2 p-2 text-terminal-white/80 hover:text-terminal-yellow transition-colors duration-300 font-mono text-sm"
               aria-label="Toggle theme"
             >
-              {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              {theme === 'dark' ? (
+                <>
+                  <Sun className="h-4 w-4" />
+                  <span>💡 Light</span>
+                </>
+              ) : (
+                <>
+                  <Moon className="h-4 w-4" />
+                  <span>🌙 Dark</span>
+                </>
+              )}
             </button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="md:hidden flex items-center space-x-4">
             <button
               onClick={toggleTheme}
-              className="p-2 text-coder-gray-600 dark:text-coder-gray-400 hover:text-coder-yellow transition-colors duration-200"
+              className="p-2 text-terminal-white/80 hover:text-terminal-yellow transition-colors duration-300"
               aria-label="Toggle theme"
             >
-              {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-coder-gray-600 dark:text-coder-gray-400 hover:text-coder-yellow transition-colors duration-200"
+              className="text-terminal-white/80 hover:text-terminal-yellow transition-colors duration-300"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -75,19 +86,19 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-coder-gray-900 border border-coder-gray-200 dark:border-coder-gray-800 mt-2 shadow-card">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-terminal-dark border border-terminal-yellow/20 mt-2 shadow-terminal">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                  className={`block px-3 py-2 text-sm font-mono font-medium transition-colors duration-300 ${
                     location.pathname === item.href
-                      ? 'text-coder-yellow bg-coder-yellow/5'
-                      : 'text-coder-gray-600 dark:text-coder-gray-400 hover:text-coder-yellow hover:bg-coder-yellow/5'
+                      ? 'text-terminal-yellow bg-terminal-yellow/10'
+                      : 'text-terminal-white/80 hover:text-terminal-yellow hover:bg-terminal-yellow/5'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item.name}
+                  <span className="terminal-prompt">{item.name}</span>
                 </Link>
               ))}
             </div>

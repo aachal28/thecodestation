@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,18 +9,16 @@
   }
   
   body {
-    font-family: 'Inter', system-ui, sans-serif;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+    background-color: #0a0a0a;
+    color: #ffffff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   
-  .font-mono {
-    font-family: 'JetBrains Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
-  }
-  
-  .font-display {
-    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  .light body {
+    background-color: #ffffff;
+    color: #0a0a0a;
   }
 }
 
@@ -29,81 +27,108 @@
     @apply max-w-content mx-auto px-6 lg:px-8;
   }
   
-  .btn-primary {
-    @apply inline-flex items-center justify-center px-4 py-2 bg-coder-yellow text-coder-black font-mono font-medium text-sm border border-coder-yellow hover:bg-coder-yellow/90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-coder-yellow/50;
+  .terminal-card {
+    @apply bg-terminal-dark border border-terminal-yellow/30 shadow-terminal hover:shadow-glow transition-all duration-300 hover:-translate-y-1;
   }
   
-  .btn-secondary {
-    @apply inline-flex items-center justify-center px-4 py-2 bg-transparent text-coder-yellow font-mono font-medium text-sm border border-coder-yellow/30 hover:border-coder-yellow hover:bg-coder-yellow/5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-coder-yellow/50;
+  .light .terminal-card {
+    @apply bg-white border-terminal-black/20 shadow-lg;
   }
   
-  .card {
-    @apply bg-white dark:bg-coder-gray-900 border border-coder-gray-200 dark:border-coder-gray-800 shadow-card hover:shadow-lg transition-all duration-200;
+  .terminal-button {
+    @apply inline-flex items-center justify-center px-4 py-2 bg-terminal-yellow text-terminal-black font-mono font-medium border border-terminal-yellow hover:bg-terminal-yellow/90 hover:shadow-glow transition-all duration-300 hover:animate-border-shift;
   }
   
-  .terminal-box {
-    @apply bg-coder-gray-950 border border-coder-gray-800 shadow-terminal text-coder-gray-100 font-mono text-sm;
+  .terminal-button-outline {
+    @apply inline-flex items-center justify-center px-4 py-2 bg-transparent text-terminal-yellow font-mono font-medium border border-terminal-yellow/50 hover:border-terminal-yellow hover:bg-terminal-yellow/10 hover:shadow-glow transition-all duration-300;
   }
   
-  .input-field {
-    @apply w-full px-3 py-2 bg-white dark:bg-coder-gray-900 border border-coder-gray-300 dark:border-coder-gray-700 text-coder-gray-900 dark:text-coder-gray-100 font-mono text-sm placeholder-coder-gray-500 focus:outline-none focus:ring-2 focus:ring-coder-yellow/50 focus:border-coder-yellow transition-colors duration-200;
+  .light .terminal-button-outline {
+    @apply text-terminal-black border-terminal-black/50 hover:border-terminal-black hover:bg-terminal-black/10;
   }
   
-  .section-header {
-    @apply text-2xl lg:text-3xl font-display font-semibold text-coder-gray-900 dark:text-coder-gray-100 mb-6;
+  .terminal-input {
+    @apply w-full px-4 py-3 bg-terminal-gray border border-terminal-yellow/30 text-terminal-white font-mono placeholder-terminal-white/50 focus:outline-none focus:border-terminal-yellow focus:shadow-glow transition-all duration-300;
   }
   
-  .text-muted {
-    @apply text-coder-gray-600 dark:text-coder-gray-400;
+  .light .terminal-input {
+    @apply bg-white border-terminal-black/20 text-terminal-black placeholder-terminal-black/50 focus:border-terminal-black;
   }
   
-  .tag {
-    @apply inline-flex items-center px-2 py-1 bg-coder-yellow/10 text-coder-yellow border border-coder-yellow/20 text-xs font-mono;
+  .terminal-tag {
+    @apply inline-flex items-center px-3 py-1 bg-terminal-yellow/20 text-terminal-yellow border border-terminal-yellow/30 font-mono text-sm;
   }
   
-  .icon-box {
-    @apply flex items-center justify-center w-10 h-10 bg-coder-yellow/10 border border-coder-yellow/20 text-coder-yellow;
+  .light .terminal-tag {
+    @apply bg-terminal-black/10 text-terminal-black border-terminal-black/20;
   }
   
   .terminal-prompt::before {
     content: '$ ';
-    @apply text-coder-yellow;
+    @apply text-terminal-green;
+  }
+  
+  .terminal-path::before {
+    content: '~/thecodestation ';
+    @apply text-terminal-blue;
   }
   
   .code-bracket::before {
     content: '{ ';
-    @apply text-coder-yellow;
+    @apply text-terminal-yellow;
   }
   
   .code-bracket::after {
     content: ' }';
-    @apply text-coder-yellow;
-  }
-}
-
-@layer utilities {
-  .animate-on-scroll {
-    @apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
+    @apply text-terminal-yellow;
   }
   
-  .animate-on-scroll.visible {
-    @apply opacity-100 translate-y-0;
+  .typing-animation {
+    overflow: hidden;
+    border-right: 2px solid #FFDD57;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  .glow-hover:hover {
+    @apply shadow-glow;
+  }
+  
+  .section-header {
+    @apply text-2xl font-mono font-bold text-terminal-white mb-6;
+  }
+  
+  .light .section-header {
+    @apply text-terminal-black;
+  }
+  
+  .text-muted {
+    @apply text-terminal-white/70;
+  }
+  
+  .light .text-muted {
+    @apply text-terminal-black/70;
   }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-coder-gray-100 dark:bg-coder-gray-900;
+  @apply bg-terminal-gray;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-coder-gray-400 dark:bg-coder-gray-600;
+  @apply bg-terminal-yellow/50;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-coder-gray-500 dark:bg-coder-gray-500;
+  @apply bg-terminal-yellow;
+}
+
+/* Selection */
+::selection {
+  @apply bg-terminal-yellow text-terminal-black;
 }
