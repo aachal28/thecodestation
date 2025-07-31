@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Code2, Sun, Moon } from 'lucide-react';
+import { Menu, X, Terminal, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
 const Header = () => {
@@ -20,24 +20,24 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-coder-white/95 dark:bg-coder-black/95 backdrop-blur-sm border-b border-coder-yellow/20">
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-2 text-xl font-bold font-mono text-coder-yellow hover:animate-glow transition-all duration-300">
-            <Code2 className="h-8 w-8" />
-            <span className="bracket-highlight">TheCodeStation</span>
+    <header className="sticky top-0 z-50 bg-white/80 dark:bg-coder-black/80 backdrop-blur-md border-b border-coder-gray-200 dark:border-coder-gray-800">
+      <nav className="container-content">
+        <div className="flex justify-between items-center h-14">
+          <Link to="/" className="flex items-center space-x-2 text-lg font-display font-semibold text-coder-gray-900 dark:text-coder-gray-100 hover:text-coder-yellow transition-colors duration-200">
+            <Terminal className="h-5 w-5 text-coder-yellow" />
+            <span>TheCodeStation</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-mono font-medium transition-all duration-300 hover:text-coder-yellow hover:shadow-glow px-2 py-1 ${
+                className={`text-sm font-medium transition-colors duration-200 hover:text-coder-yellow px-2 py-1 ${
                   location.pathname === item.href 
-                    ? 'text-coder-yellow border-b border-coder-yellow' 
-                    : 'text-coder-black dark:text-coder-white'
+                    ? 'text-coder-yellow' 
+                    : 'text-coder-gray-600 dark:text-coder-gray-400'
                 }`}
               >
                 {item.name}
@@ -47,7 +47,7 @@ const Header = () => {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 border border-coder-yellow/30 text-coder-yellow hover:bg-coder-yellow hover:text-coder-black transition-all duration-300 hover:shadow-glow"
+              className="p-2 text-coder-gray-600 dark:text-coder-gray-400 hover:text-coder-yellow transition-colors duration-200"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
@@ -58,14 +58,14 @@ const Header = () => {
           <div className="md:hidden flex items-center space-x-2">
             <button
               onClick={toggleTheme}
-              className="p-2 border border-coder-yellow/30 text-coder-yellow hover:bg-coder-yellow hover:text-coder-black transition-all duration-300"
+              className="p-2 text-coder-gray-600 dark:text-coder-gray-400 hover:text-coder-yellow transition-colors duration-200"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-coder-black dark:text-coder-white hover:text-coder-yellow transition-colors duration-300"
+              className="text-coder-gray-600 dark:text-coder-gray-400 hover:text-coder-yellow transition-colors duration-200"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -75,15 +75,15 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-coder-white dark:bg-coder-black border border-coder-yellow/20 mt-2">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-coder-gray-900 border border-coder-gray-200 dark:border-coder-gray-800 mt-2 shadow-card">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-3 py-2 text-sm font-mono font-medium transition-all duration-300 ${
+                  className={`block px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                     location.pathname === item.href
-                      ? 'text-coder-yellow bg-coder-yellow/10'
-                      : 'text-coder-black dark:text-coder-white hover:text-coder-yellow hover:bg-coder-yellow/5'
+                      ? 'text-coder-yellow bg-coder-yellow/5'
+                      : 'text-coder-gray-600 dark:text-coder-gray-400 hover:text-coder-yellow hover:bg-coder-yellow/5'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >

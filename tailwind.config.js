@@ -8,43 +8,49 @@ export default {
   theme: {
     extend: {
       colors: {
-        'coder-black': '#000000',
-        'coder-white': '#FFFFFF',
-        'coder-yellow': '#FFDD33',
+        'coder-black': '#0a0a0a',
+        'coder-white': '#fafafa',
+        'coder-yellow': '#fbbf24',
         'coder-gray': {
-          100: '#F5F5F5',
-          200: '#E5E5E5',
-          300: '#D4D4D4',
-          400: '#A3A3A3',
-          500: '#737373',
-          600: '#525252',
-          700: '#404040',
-          800: '#262626',
-          900: '#171717',
+          50: '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
+          950: '#030712',
         }
       },
       fontFamily: {
-        'mono': ['JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', 'monospace'],
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'mono': ['JetBrains Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'monospace'],
+        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        'display': ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+      },
+      maxWidth: {
+        'content': '1200px',
       },
       animation: {
-        'fade-in': 'fadeIn 0.6s ease-out',
-        'glow': 'glow 2s ease-in-out infinite alternate',
+        'fade-in': 'fadeIn 0.5s ease-out',
+        'slide-up': 'slideUp 0.6s ease-out',
       },
       keyframes: {
         fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        glow: {
-          '0%': { boxShadow: '0 0 5px #FFDD33' },
-          '100%': { boxShadow: '0 0 20px #FFDD33, 0 0 30px #FFDD33' },
         }
       },
       boxShadow: {
-        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        'soft-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-        'glow': '0 0 20px rgba(255, 221, 51, 0.3)',
+        'subtle': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'terminal': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.05)',
       }
     },
   },

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,74 +10,80 @@
   
   body {
     font-family: 'Inter', system-ui, sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   .font-mono {
-    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  }
+  
+  .font-display {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   }
 }
 
 @layer components {
+  .container-content {
+    @apply max-w-content mx-auto px-6 lg:px-8;
+  }
+  
   .btn-primary {
-    @apply px-6 py-3 bg-transparent border-2 border-coder-yellow text-coder-yellow font-mono font-medium transition-all duration-300 hover:bg-coder-yellow hover:text-coder-black hover:shadow-glow transform hover:scale-105;
+    @apply inline-flex items-center justify-center px-4 py-2 bg-coder-yellow text-coder-black font-mono font-medium text-sm border border-coder-yellow hover:bg-coder-yellow/90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-coder-yellow/50;
   }
   
   .btn-secondary {
-    @apply px-6 py-3 bg-coder-black border-2 border-coder-yellow text-coder-yellow font-mono font-medium transition-all duration-300 hover:bg-coder-yellow hover:text-coder-black hover:shadow-glow;
+    @apply inline-flex items-center justify-center px-4 py-2 bg-transparent text-coder-yellow font-mono font-medium text-sm border border-coder-yellow/30 hover:border-coder-yellow hover:bg-coder-yellow/5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-coder-yellow/50;
   }
   
   .card {
-    @apply bg-white dark:bg-coder-black border border-coder-gray-200 dark:border-coder-yellow/20 shadow-soft transition-all duration-300 hover:shadow-soft-lg hover:border-coder-yellow/50 hover:-translate-y-2;
+    @apply bg-white dark:bg-coder-gray-900 border border-coder-gray-200 dark:border-coder-gray-800 shadow-card hover:shadow-lg transition-all duration-200;
+  }
+  
+  .terminal-box {
+    @apply bg-coder-gray-950 border border-coder-gray-800 shadow-terminal text-coder-gray-100 font-mono text-sm;
   }
   
   .input-field {
-    @apply w-full px-4 py-3 bg-transparent border-2 border-coder-gray-300 dark:border-coder-yellow/30 text-coder-black dark:text-coder-white font-mono placeholder-coder-gray-500 focus:outline-none focus:border-coder-yellow transition-colors duration-300;
+    @apply w-full px-3 py-2 bg-white dark:bg-coder-gray-900 border border-coder-gray-300 dark:border-coder-gray-700 text-coder-gray-900 dark:text-coder-gray-100 font-mono text-sm placeholder-coder-gray-500 focus:outline-none focus:ring-2 focus:ring-coder-yellow/50 focus:border-coder-yellow transition-colors duration-200;
   }
   
-  .section-divider {
-    @apply w-full h-px bg-gradient-to-r from-transparent via-coder-yellow to-transparent my-16;
+  .section-header {
+    @apply text-2xl lg:text-3xl font-display font-semibold text-coder-gray-900 dark:text-coder-gray-100 mb-6;
   }
   
-  .code-block {
-    @apply bg-coder-gray-100 dark:bg-coder-black border border-coder-yellow/20 p-4 font-mono text-sm;
-  }
-  
-  .icon-container {
-    @apply p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow transition-all duration-300 hover:bg-coder-yellow hover:text-coder-black;
+  .text-muted {
+    @apply text-coder-gray-600 dark:text-coder-gray-400;
   }
   
   .tag {
-    @apply px-3 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-sm font-mono;
+    @apply inline-flex items-center px-2 py-1 bg-coder-yellow/10 text-coder-yellow border border-coder-yellow/20 text-xs font-mono;
   }
   
-  .avatar {
-    @apply w-32 h-32 bg-coder-yellow flex items-center justify-center shadow-soft;
+  .icon-box {
+    @apply flex items-center justify-center w-10 h-10 bg-coder-yellow/10 border border-coder-yellow/20 text-coder-yellow;
   }
   
   .terminal-prompt::before {
-    content: '> ';
-    @apply text-coder-yellow font-mono;
+    content: '$ ';
+    @apply text-coder-yellow;
   }
   
-  .bracket-highlight::before {
+  .code-bracket::before {
     content: '{ ';
-    @apply text-coder-yellow font-mono;
+    @apply text-coder-yellow;
   }
   
-  .bracket-highlight::after {
+  .code-bracket::after {
     content: ' }';
-    @apply text-coder-yellow font-mono;
+    @apply text-coder-yellow;
   }
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-gradient-to-r from-coder-yellow to-coder-yellow/80 bg-clip-text text-transparent;
-  }
-  
   .animate-on-scroll {
-    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+    @apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
   }
   
   .animate-on-scroll.visible {
@@ -87,17 +93,17 @@
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-coder-gray-100 dark:bg-coder-black;
+  @apply bg-coder-gray-100 dark:bg-coder-gray-900;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-coder-yellow;
+  @apply bg-coder-gray-400 dark:bg-coder-gray-600;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-coder-yellow/80;
+  @apply bg-coder-gray-500 dark:bg-coder-gray-500;
 }
