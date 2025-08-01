@@ -78,7 +78,7 @@ const Products = () => {
         <section className="mb-12">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
-              <div key={category} className="px-6 py-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow font-mono font-medium rounded-xl">
+              <div key={category} className="px-6 py-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow font-mono font-medium rounded-full">
                 {category}
               </div>
             ))}
@@ -91,7 +91,7 @@ const Products = () => {
             {products.map((product) => (
               <div key={product.id} className="card overflow-hidden">
                 {/* Product Image */}
-                <div className="h-48 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center">
+                <div className="h-48 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center rounded-t-2xl">
                   <div className="text-coder-black text-center">
                     {product.icon}
                     <p className="mt-2 font-mono font-semibold">Product Image</p>
@@ -110,7 +110,7 @@ const Products = () => {
                   
                   {/* CTA Button */}
                   <button
-                    className={`w-full py-3 font-mono font-semibold transition-all duration-300 flex items-center justify-center ${
+                    className={`w-full py-3 font-mono font-semibold transition-all duration-300 flex items-center justify-center rounded-xl ${
                       product.available
                         ? 'btn-primary'
                         : 'bg-transparent border border-coder-gray-600/30 text-coder-gray-600 dark:text-coder-gray-400 cursor-not-allowed'
@@ -133,7 +133,7 @@ const Products = () => {
         </section>
 
         {/* Newsletter CTA */}
-        <section className="text-center card p-8 rounded-3xl">
+        <section className="text-center card p-8">
           <h2 className="text-2xl font-bold font-mono mb-4 terminal-prompt">Stay Updated on New Products</h2>
           <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 font-mono">
             Be the first to know about new product launches and exclusive discounts.

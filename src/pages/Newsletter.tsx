@@ -53,12 +53,20 @@ const Newsletter = () => {
               { icon: <Briefcase className="h-6 w-6" />, title: 'Project Ideas', desc: 'Build your portfolio' },
               { icon: <Target className="h-6 w-6" />, title: 'Cheat Sheets', desc: 'Quick reference guides' },
             ].map((item, index) => (
-              <div key={index} className="card p-6 text-center">
-                <div className="p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mx-auto mb-4 w-fit">
+              <div key={index} className="terminal-box text-center">
+                <div className="terminal-header">
+                  <div className="terminal-dots">
+                    <div className="terminal-dot red"></div>
+                    <div className="terminal-dot yellow"></div>
+                    <div className="terminal-dot green"></div>
+                  </div>
+                  <span className="text-coder-yellow font-mono text-sm">~/{item.title.toLowerCase().replace(/\s+/g, '_')}.txt</span>
+                </div>
+                <div className="p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mx-auto mb-4 w-fit rounded-xl">
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">{item.title}</h3>
-                <p className="text-coder-gray-600 dark:text-coder-gray-400 font-mono text-sm">{item.desc}</p>
+                <p className="text-coder-yellow/80 font-mono text-sm">$ cat {item.desc.toLowerCase()}</p>
               </div>
             ))}
           </div>
@@ -67,10 +75,18 @@ const Newsletter = () => {
         {/* Preview */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold font-mono mb-8 text-center bracket-highlight">Preview of Last Issue</h2>
-          <div className="max-w-4xl mx-auto card p-8">
+          <div className="max-w-4xl mx-auto terminal-box">
+            <div className="terminal-header">
+              <div className="terminal-dots">
+                <div className="terminal-dot red"></div>
+                <div className="terminal-dot yellow"></div>
+                <div className="terminal-dot green"></div>
+              </div>
+              <span className="text-coder-yellow font-mono text-sm">~/newsletter/issue_47.md</span>
+            </div>
             <div className="border-l-4 border-coder-yellow pl-6">
               <h3 className="text-xl font-semibold font-mono mb-4 text-coder-black dark:text-coder-white terminal-prompt">TheCodeStation Weekly #47</h3>
-              <div className="space-y-4 text-coder-gray-600 dark:text-coder-gray-400 font-mono text-sm">
+              <div className="space-y-4 text-coder-yellow/80 font-mono text-sm">
                 <div>
                   <h4 className="font-semibold text-coder-yellow mb-2 terminal-prompt">Tool of the Week</h4>
                   <p>Cursor AI - The AI-first code editor that's changing how we write code.</p>
@@ -90,7 +106,7 @@ const Newsletter = () => {
 
         {/* Newsletter Signup */}
         <section className="mb-16">
-          <div className="max-w-2xl mx-auto text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12">
+          <div className="max-w-2xl mx-auto text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12 rounded-3xl">
             <h2 className="text-3xl font-bold font-mono mb-6 bracket-highlight">Join the Free Vault</h2>
             <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 font-mono">
               Get instant access to exclusive resources plus weekly insights that actually matter.

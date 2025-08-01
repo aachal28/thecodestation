@@ -88,7 +88,7 @@ const Resources = () => {
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`flex items-center px-6 py-3 font-mono font-medium transition-all duration-300 ${
+                className={`flex items-center px-6 py-3 font-mono font-medium transition-all duration-300 rounded-xl ${
                   selectedCategory === category.id ? 'btn-primary' : 'btn-secondary'
                 }`}
               >
@@ -103,14 +103,22 @@ const Resources = () => {
         <section className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredResources.map((resource) => (
-              <div key={resource.id} className="card p-6">
+              <div key={resource.id} className="terminal-box">
+                <div className="terminal-header">
+                  <div className="terminal-dots">
+                    <div className="terminal-dot red"></div>
+                    <div className="terminal-dot yellow"></div>
+                    <div className="terminal-dot green"></div>
+                  </div>
+                  <span className="text-coder-yellow font-mono text-sm">~/{resource.category}/{resource.title.toLowerCase().replace(/\s+/g, '_')}</span>
+                </div>
                 <div className="flex items-start justify-between mb-4">
                   <h3 className="text-lg font-semibold font-mono text-coder-black dark:text-coder-white bracket-highlight">{resource.title}</h3>
                   {resource.locked && <Lock className="h-4 w-4 text-coder-yellow" />}
                 </div>
-                <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-4 font-mono text-sm">{resource.description}</p>
+                <p className="text-coder-yellow/80 mb-4 font-mono text-sm">$ {resource.description}</p>
                 <button
-                  className={`w-full py-3 font-mono font-medium transition-all duration-300 flex items-center justify-center ${
+                  className={`w-full py-3 font-mono font-medium transition-all duration-300 flex items-center justify-center rounded-xl ${
                     resource.locked
                       ? 'bg-transparent border border-coder-gray-600/30 text-coder-gray-600 dark:text-coder-gray-400 cursor-not-allowed'
                       : 'btn-primary'
@@ -134,7 +142,7 @@ const Resources = () => {
         </section>
 
         {/* Download CTA */}
-        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12">
+        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12 rounded-3xl">
           <h2 className="text-3xl font-bold font-mono mb-4 bracket-highlight">Download Free Developer Toolkit</h2>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">
             Get instant access to checklists, Notion freebies, and downloadable guides.

@@ -87,7 +87,7 @@ const Blogs = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 font-mono font-medium transition-all duration-300 ${
+                className={`px-6 py-3 font-mono font-medium transition-all duration-300 rounded-xl ${
                   selectedCategory === category ? 'btn-primary' : 'btn-secondary'
                 }`}
               >
@@ -102,7 +102,7 @@ const Blogs = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredBlogs.map((blog: any) => (
               <article key={blog.id} className="card overflow-hidden cursor-pointer">
-                <div className="h-48 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center">
+                <div className="h-48 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center rounded-t-2xl">
                   <span className="text-coder-black font-mono font-semibold">{blog.thumbnail}</span>
                 </div>
                 <div className="p-6">
@@ -134,7 +134,7 @@ const Blogs = () => {
         </section>
 
         {/* Newsletter CTA */}
-        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8">
+        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 rounded-3xl">
           <h2 className="text-2xl font-bold font-mono mb-4 bracket-highlight">Join Newsletter for Weekly Summaries</h2>
           <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 max-w-2xl mx-auto font-mono">
             Get weekly summaries of the latest blog posts, plus exclusive content and early access to new articles.

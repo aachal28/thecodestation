@@ -52,15 +52,23 @@ const Services = () => {
         <section className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="card p-8">
+              <div key={index} className="terminal-box">
+                <div className="terminal-header">
+                  <div className="terminal-dots">
+                    <div className="terminal-dot red"></div>
+                    <div className="terminal-dot yellow"></div>
+                    <div className="terminal-dot green"></div>
+                  </div>
+                  <span className="text-coder-yellow font-mono text-sm">~/services/{service.title.toLowerCase().replace(/[^a-z0-9]/g, '_')}.sh</span>
+                </div>
                 <div className="flex items-center mb-6">
-                  <div className="p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mr-4">
+                  <div className="p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mr-4 rounded-xl">
                     {service.icon}
                   </div>
                   <h3 className="text-xl font-bold font-mono text-coder-black dark:text-coder-white bracket-highlight">{service.title}</h3>
                 </div>
                 
-                <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-8 text-lg font-mono">{service.description}</p>
+                <p className="text-coder-yellow/80 mb-8 text-lg font-mono">{service.description}</p>
                 
                 <button className="btn-primary w-full flex items-center justify-center">
                   <Calendar className="mr-2 h-5 w-5" />
@@ -82,7 +90,7 @@ const Services = () => {
               { step: '04', title: 'Delivery', desc: 'You receive exceptional results' },
             ].map((item, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-coder-yellow flex items-center justify-center text-coder-black font-mono font-bold text-xl mx-auto mb-4 border border-coder-yellow">
+                <div className="w-16 h-16 bg-coder-yellow flex items-center justify-center text-coder-black font-mono font-bold text-xl mx-auto mb-4 border border-coder-yellow rounded-2xl">
                   {item.step}
                 </div>
                 <h4 className="text-lg font-semibold font-mono mb-2 text-coder-black dark:text-coder-white">{item.title}</h4>
@@ -93,7 +101,7 @@ const Services = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-12">
+        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-12 rounded-3xl">
           <h2 className="text-3xl font-bold font-mono mb-4 terminal-prompt">Ready to Get Started?</h2>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">
             Let's discuss how we can work together to achieve your goals. Book a free consultation call today.
