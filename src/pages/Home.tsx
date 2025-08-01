@@ -18,43 +18,43 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-coder-black animate-fade-in">
+    <div className="min-h-screen animate-fade-in">
       {/* Hero Section */}
-      <section className="py-16 lg:py-24">
-        <div className="container-content">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6 text-coder-gray-900 dark:text-coder-gray-100">
-              <span className="terminal-prompt font-mono">Helping Coders</span><br />
-              <span className="code-bracket">Learn, Build & Grow</span> 🚀
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold font-mono mb-6 text-coder-black dark:text-coder-white">
+              <span className="terminal-prompt">Helping Coders</span><br />
+              <span className="bracket-highlight">Learn, Build & Grow</span> 🚀
             </h1>
-            <p className="text-lg sm:text-xl text-muted mb-12 max-w-2xl mx-auto">
+            <p className="text-xl sm:text-2xl text-coder-gray-600 dark:text-coder-gray-400 mb-12 max-w-3xl mx-auto font-mono">
               Explore tools, projects, and personal picks — all in one station.
             </p>
             
             {/* Quick Link Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
-              <Link to="/resources" className="card p-6 text-center hover:shadow-lg transition-all duration-200">
-                <div className="icon-box mx-auto mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+              <Link to="/resources" className="card p-6 text-center hover:scale-105 transition-all duration-300">
+                <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow w-fit mx-auto mb-4">
                   <Wrench className="h-8 w-8" />
                 </div>
-                <h3 className="text-lg font-display font-semibold mb-2 text-coder-gray-900 dark:text-coder-gray-100">Tools</h3>
-                <p className="text-muted text-sm">Curated developer resources</p>
+                <h3 className="text-xl font-semibold font-mono mb-2 bracket-highlight">Tools</h3>
+                <p className="text-coder-gray-600 dark:text-coder-gray-400 font-mono text-sm">Curated developer resources</p>
               </Link>
               
-              <Link to="/products" className="card p-6 text-center hover:shadow-lg transition-all duration-200">
-                <div className="icon-box mx-auto mb-4">
+              <Link to="/products" className="card p-6 text-center hover:scale-105 transition-all duration-300">
+                <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow w-fit mx-auto mb-4">
                   <ShoppingCart className="h-8 w-8" />
                 </div>
-                <h3 className="text-lg font-display font-semibold mb-2 text-coder-gray-900 dark:text-coder-gray-100">Products</h3>
-                <p className="text-muted text-sm">Digital products & templates</p>
+                <h3 className="text-xl font-semibold font-mono mb-2 bracket-highlight">Products</h3>
+                <p className="text-coder-gray-600 dark:text-coder-gray-400 font-mono text-sm">Digital products & templates</p>
               </Link>
               
-              <Link to="/blogs" className="card p-6 text-center hover:shadow-lg transition-all duration-200">
-                <div className="icon-box mx-auto mb-4">
+              <Link to="/blogs" className="card p-6 text-center hover:scale-105 transition-all duration-300">
+                <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow w-fit mx-auto mb-4">
                   <BookOpen className="h-8 w-8" />
                 </div>
-                <h3 className="text-lg font-display font-semibold mb-2 text-coder-gray-900 dark:text-coder-gray-100">Blogs</h3>
-                <p className="text-muted text-sm">Tutorials & insights</p>
+                <h3 className="text-xl font-semibold font-mono mb-2 bracket-highlight">Blogs</h3>
+                <p className="text-coder-gray-600 dark:text-coder-gray-400 font-mono text-sm">Tutorials & insights</p>
               </Link>
             </div>
           </div>
@@ -62,20 +62,20 @@ const Home = () => {
       </section>
 
       {/* Recent Posts */}
-      <section className="py-16 bg-coder-gray-50 dark:bg-coder-gray-950">
-        <div className="container-content">
-          <h2 className="section-header text-center terminal-prompt font-mono">My Recent Posts</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <section className="py-16 bg-coder-gray-100/50 dark:bg-coder-black/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold font-mono text-center mb-12 terminal-prompt">My Recent Posts</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {recentPosts.map((post) => (
               <div key={post.id} className="card p-6">
                 <div className="flex items-center mb-4">
-                  <div className="icon-box mr-3">
+                  <div className="p-2 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mr-3">
                     {post.icon}
                   </div>
-                  <span className="tag">{post.type}</span>
+                  <span className="text-sm font-mono text-coder-yellow">{post.type}</span>
                 </div>
-                <h3 className="text-lg font-display font-semibold mb-3 text-coder-gray-900 dark:text-coder-gray-100">{post.title}</h3>
-                <button className="text-coder-yellow hover:text-coder-yellow/80 text-sm font-medium transition-colors duration-200">
+                <h3 className="text-lg font-semibold font-mono mb-3 text-coder-black dark:text-coder-white">{post.title}</h3>
+                <button className="text-coder-yellow hover:text-coder-yellow/80 font-mono text-sm transition-colors duration-300">
                   View Post →
                 </button>
               </div>
@@ -85,34 +85,32 @@ const Home = () => {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-16">
-        <div className="container-content">
-          <div className="terminal-box p-8 text-center">
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-4 code-bracket text-coder-gray-100">Join My Weekly Newsletter</h2>
-            <p className="text-lg text-coder-gray-300 mb-8 max-w-2xl mx-auto">
+      <section className="py-20 bg-coder-yellow/10 dark:bg-coder-yellow/5 border-t border-b border-coder-yellow/20 mx-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold font-mono mb-4 bracket-highlight">Join My Weekly Newsletter</h2>
+          <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">
             Get the latest tools, tips, and insights delivered straight to your inbox every week.
           </p>
-            <form onSubmit={handleEmailSubmit} className="max-w-md mx-auto">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="input-field flex-1 bg-coder-gray-800 border-coder-gray-700 text-coder-gray-100"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="btn-primary"
-                >
-                  <Mail className="mr-2 h-4 w-4" />
-                  Subscribe
-                </button>
-              </div>
-            </form>
-          </div>
+          <form onSubmit={handleEmailSubmit} className="max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="input-field flex-1"
+                required
+              />
+              <button
+                type="submit"
+                className="btn-primary flex items-center justify-center"
+              >
+                <Mail className="mr-2 h-5 w-5" />
+                Subscribe
+              </button>
             </div>
+          </form>
+        </div>
       </section>
     </div>
   );

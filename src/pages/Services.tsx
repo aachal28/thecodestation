@@ -36,34 +36,34 @@ const Services = () => {
   ];
 
   return (
-    <div className="py-16 bg-white dark:bg-coder-black animate-fade-in">
-      <div className="container-content">
+    <div className="py-16 animate-fade-in">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <section className="text-center mb-16">
-          <h1 className="text-3xl sm:text-4xl font-display font-bold mb-4 text-coder-gray-900 dark:text-coder-gray-100">
-            <span className="terminal-prompt font-mono">Let's Build or</span> <span className="code-bracket">Grow Together</span> 💼
+          <h1 className="text-4xl sm:text-5xl font-bold font-mono mb-4 text-coder-black dark:text-coder-white">
+            <span className="terminal-prompt">Let's Build or</span> <span className="bracket-highlight">Grow Together</span> 💼
           </h1>
-          <p className="text-lg text-muted max-w-2xl mx-auto">
+          <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 max-w-3xl mx-auto font-mono">
             Professional services to help you build, grow, and succeed in the digital world.
           </p>
         </section>
 
         {/* Services Grid */}
         <section className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="card p-6">
+              <div key={index} className="card p-8">
                 <div className="flex items-center mb-6">
-                  <div className="icon-box mr-4">
+                  <div className="p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mr-4">
                     {service.icon}
                   </div>
-                  <h3 className="text-lg font-display font-semibold text-coder-gray-900 dark:text-coder-gray-100">{service.title}</h3>
+                  <h3 className="text-xl font-bold font-mono text-coder-black dark:text-coder-white bracket-highlight">{service.title}</h3>
                 </div>
                 
-                <p className="text-muted mb-6 text-sm">{service.description}</p>
+                <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-8 text-lg font-mono">{service.description}</p>
                 
-                <button className="btn-primary w-full">
-                  <Calendar className="mr-2 h-4 w-4" />
+                <button className="btn-primary w-full flex items-center justify-center">
+                  <Calendar className="mr-2 h-5 w-5" />
                   {service.cta}
                 </button>
               </div>
@@ -73,8 +73,8 @@ const Services = () => {
 
         {/* Process Section */}
         <section className="mb-16">
-          <h2 className="section-header text-center terminal-prompt font-mono">How We Work Together</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <h2 className="text-3xl font-bold font-mono mb-12 text-center terminal-prompt">How We Work Together</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
               { step: '01', title: 'Discovery', desc: 'We discuss your needs and goals' },
               { step: '02', title: 'Planning', desc: 'I create a customized strategy' },
@@ -82,27 +82,27 @@ const Services = () => {
               { step: '04', title: 'Delivery', desc: 'You receive exceptional results' },
             ].map((item, index) => (
               <div key={index} className="text-center">
-                <div className="w-12 h-12 bg-coder-yellow flex items-center justify-center text-coder-black font-mono font-bold text-lg mx-auto mb-4">
+                <div className="w-16 h-16 bg-coder-yellow flex items-center justify-center text-coder-black font-mono font-bold text-xl mx-auto mb-4 border border-coder-yellow">
                   {item.step}
                 </div>
-                <h4 className="text-base font-display font-semibold mb-2 text-coder-gray-900 dark:text-coder-gray-100">{item.title}</h4>
-                <p className="text-muted text-sm">{item.desc}</p>
+                <h4 className="text-lg font-semibold font-mono mb-2 text-coder-black dark:text-coder-white">{item.title}</h4>
+                <p className="text-coder-gray-600 dark:text-coder-gray-400 text-sm font-mono">{item.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="terminal-box p-8 text-center">
-          <h2 className="text-2xl font-display font-semibold mb-4 terminal-prompt text-coder-gray-100">Ready to Get Started?</h2>
-          <p className="text-lg text-coder-gray-300 mb-8 max-w-2xl mx-auto">
+        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-12">
+          <h2 className="text-3xl font-bold font-mono mb-4 terminal-prompt">Ready to Get Started?</h2>
+          <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">
             Let's discuss how we can work together to achieve your goals. Book a free consultation call today.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="btn-primary">
               Book Free Consultation
             </button>
-            <button className="btn-secondary bg-transparent border-coder-gray-600 text-coder-gray-300 hover:border-coder-yellow hover:text-coder-yellow">
+            <button className="btn-secondary">
               Send a Message
             </button>
           </div>

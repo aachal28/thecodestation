@@ -68,26 +68,26 @@ const Blogs = () => {
     : blogs.filter((blog: any) => blog.category === selectedCategory);
 
   return (
-    <div className="py-16 bg-white dark:bg-coder-black animate-fade-in">
-      <div className="container-content">
+    <div className="py-16 animate-fade-in">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <section className="text-center mb-16">
-          <h1 className="text-3xl sm:text-4xl font-display font-bold mb-4 text-coder-gray-900 dark:text-coder-gray-100">
-            <span className="code-bracket">Developer</span> <span className="terminal-prompt font-mono">Blog</span>
+          <h1 className="text-4xl sm:text-5xl font-bold font-mono mb-4 text-coder-black dark:text-coder-white">
+            <span className="bracket-highlight">Developer</span> <span className="terminal-prompt">Blog</span>
           </h1>
-          <p className="text-lg text-muted max-w-2xl mx-auto">
+          <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 max-w-3xl mx-auto font-mono">
             Tutorials, book reviews, learning stories, and monthly roundups - everything to help you grow as a developer.
           </p>
         </section>
 
         {/* Categories */}
         <section className="mb-12">
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 font-medium transition-all duration-200 text-sm ${
+                className={`px-6 py-3 font-mono font-medium transition-all duration-300 ${
                   selectedCategory === category ? 'btn-primary' : 'btn-secondary'
                 }`}
               >
@@ -99,30 +99,30 @@ const Blogs = () => {
 
         {/* Blog Grid */}
         <section className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredBlogs.map((blog: any) => (
               <article key={blog.id} className="card overflow-hidden cursor-pointer">
-                <div className="h-40 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center">
-                  <span className="text-coder-black font-mono text-sm font-medium">{blog.thumbnail}</span>
+                <div className="h-48 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center">
+                  <span className="text-coder-black font-mono font-semibold">{blog.thumbnail}</span>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="tag">
+                    <span className="px-3 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-sm font-mono rounded-full">
                       {blog.category}
                     </span>
-                    <div className="flex items-center text-muted text-xs">
+                    <div className="flex items-center text-coder-gray-600 dark:text-coder-gray-400 text-sm font-mono">
                       <Clock className="h-4 w-4 mr-1" />
                       {blog.readTime}
                     </div>
                   </div>
-                  <h3 className="text-lg font-display font-semibold mb-3 text-coder-gray-900 dark:text-coder-gray-100">{blog.title}</h3>
-                  <p className="text-muted mb-4 text-sm">{blog.excerpt}</p>
+                  <h3 className="text-xl font-semibold font-mono mb-3 text-coder-black dark:text-coder-white bracket-highlight">{blog.title}</h3>
+                  <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-4 font-mono text-sm">{blog.excerpt}</p>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center text-muted text-xs">
+                    <div className="flex items-center text-coder-gray-600 dark:text-coder-gray-400 text-sm font-mono">
                       <Calendar className="h-4 w-4 mr-1" />
                       {new Date(blog.date).toLocaleDateString()}
                     </div>
-                    <button className="flex items-center text-coder-yellow hover:text-coder-yellow/80 font-medium transition-colors duration-200 text-sm">
+                    <button className="flex items-center text-coder-yellow hover:text-coder-yellow/80 font-mono font-medium transition-colors duration-300">
                       Read More
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </button>
@@ -134,9 +134,9 @@ const Blogs = () => {
         </section>
 
         {/* Newsletter CTA */}
-        <section className="text-center card p-8">
-          <h2 className="text-xl font-display font-semibold mb-4 code-bracket text-coder-gray-900 dark:text-coder-gray-100">Join Newsletter for Weekly Summaries</h2>
-          <p className="text-muted mb-6 max-w-2xl mx-auto">
+        <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8">
+          <h2 className="text-2xl font-bold font-mono mb-4 bracket-highlight">Join Newsletter for Weekly Summaries</h2>
+          <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 max-w-2xl mx-auto font-mono">
             Get weekly summaries of the latest blog posts, plus exclusive content and early access to new articles.
           </p>
           <button className="btn-primary">
