@@ -40,13 +40,13 @@ const Home = () => {
                     <div className="terminal-dot yellow"></div>
                     <div className="terminal-dot green"></div>
                   </div>
-                  <span className="text-coder-yellow font-mono text-sm">~/tools</span>
+                  <span className="terminal-path">~/tools</span>
                 </div>
-                <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow w-fit mx-auto mb-4 rounded-xl">
+                <div className="icon-container mx-auto mb-6">
                   <Wrench className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-semibold font-mono mb-2 bracket-highlight">Tools</h3>
-                <p className="text-coder-yellow/80 font-mono text-sm">$ cat curated_resources.txt</p>
+                <h3 className="text-xl font-semibold font-mono mb-4 bracket-highlight leading-8">Tools</h3>
+                <p className="text-coder-yellow/80 font-mono text-sm leading-6">$ cat curated_resources.txt</p>
               </Link>
               
               <Link to="/products" className="terminal-box text-center hover:scale-105 transition-all duration-300">
@@ -56,13 +56,13 @@ const Home = () => {
                     <div className="terminal-dot yellow"></div>
                     <div className="terminal-dot green"></div>
                   </div>
-                  <span className="text-coder-yellow font-mono text-sm">~/products</span>
+                  <span className="terminal-path">~/products</span>
                 </div>
-                <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow w-fit mx-auto mb-4 rounded-xl">
+                <div className="icon-container mx-auto mb-6">
                   <ShoppingCart className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-semibold font-mono mb-2 bracket-highlight">Products</h3>
-                <p className="text-coder-yellow/80 font-mono text-sm">$ ls digital_products/</p>
+                <h3 className="text-xl font-semibold font-mono mb-4 bracket-highlight leading-8">Products</h3>
+                <p className="text-coder-yellow/80 font-mono text-sm leading-6">$ ls digital_products/</p>
               </Link>
               
               <Link to="/blogs" className="terminal-box text-center hover:scale-105 transition-all duration-300">
@@ -72,13 +72,13 @@ const Home = () => {
                     <div className="terminal-dot yellow"></div>
                     <div className="terminal-dot green"></div>
                   </div>
-                  <span className="text-coder-yellow font-mono text-sm">~/blogs</span>
+                  <span className="terminal-path">~/blogs</span>
                 </div>
-                <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow w-fit mx-auto mb-4 rounded-xl">
+                <div className="icon-container mx-auto mb-6">
                   <BookOpen className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-semibold font-mono mb-2 bracket-highlight">Blogs</h3>
-                <p className="text-coder-yellow/80 font-mono text-sm">$ vim latest_posts.md</p>
+                <h3 className="text-xl font-semibold font-mono mb-4 bracket-highlight leading-8">Blogs</h3>
+                <p className="text-coder-yellow/80 font-mono text-sm leading-6">$ vim latest_posts.md</p>
               </Link>
             </div>
           </div>
@@ -92,8 +92,23 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {recentPosts.map((post) => (
               <div key={post.id} className="card p-6">
-                <div className="flex items-center mb-4">
-                  <div className="p-2 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mr-3 rounded-xl">
+                <div className="card-header">
+                  <div className="flex items-center">
+                    <div className="icon-container mr-3 w-10 h-10 p-2">
+                      {post.icon}
+                    </div>
+                    <span className="text-sm font-mono text-coder-yellow leading-8">{post.type}</span>
+                  </div>
+                </div>
+                <h3 className="card-title mb-4">{post.title}</h3>
+                <button className="text-coder-yellow hover:text-coder-yellow/80 font-mono text-sm transition-colors duration-300 leading-6">
+                  View Post →
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
                     {post.icon}
                   </div>
                   <span className="text-sm font-mono text-coder-yellow">{post.type}</span>

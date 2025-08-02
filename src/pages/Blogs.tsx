@@ -87,11 +87,11 @@ const Blogs = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 font-mono font-medium transition-all duration-300 rounded-xl ${
+                className={`px-6 py-3 font-mono font-medium transition-all duration-300 rounded-xl h-12 ${
                   selectedCategory === category ? 'btn-primary' : 'btn-secondary'
                 }`}
               >
-                {category}
+                <span className="leading-6">{category}</span>
               </button>
             ))}
           </div>
@@ -102,28 +102,28 @@ const Blogs = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredBlogs.map((blog: any) => (
               <article key={blog.id} className="card overflow-hidden cursor-pointer">
-                <div className="h-48 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center rounded-t-2xl">
-                  <span className="text-coder-black font-mono font-semibold">{blog.thumbnail}</span>
+                <div className="h-48 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center rounded-t-xl">
+                  <span className="text-coder-black font-mono font-semibold leading-6">{blog.thumbnail}</span>
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="px-3 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-sm font-mono rounded-full">
+                  <div className="card-header">
+                    <span className="tag">
                       {blog.category}
                     </span>
-                    <div className="flex items-center text-coder-gray-600 dark:text-coder-gray-400 text-sm font-mono">
+                    <div className="card-meta">
                       <Clock className="h-4 w-4 mr-1" />
                       {blog.readTime}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold font-mono mb-3 text-coder-black dark:text-coder-white bracket-highlight">{blog.title}</h3>
-                  <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-4 font-mono text-sm">{blog.excerpt}</p>
+                  <h3 className="card-title mb-4 bracket-highlight">{blog.title}</h3>
+                  <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 font-mono text-sm leading-6">{blog.excerpt}</p>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center text-coder-gray-600 dark:text-coder-gray-400 text-sm font-mono">
+                    <div className="card-meta">
                       <Calendar className="h-4 w-4 mr-1" />
                       {new Date(blog.date).toLocaleDateString()}
                     </div>
-                    <button className="flex items-center text-coder-yellow hover:text-coder-yellow/80 font-mono font-medium transition-colors duration-300">
-                      Read More
+                    <button className="flex items-center text-coder-yellow hover:text-coder-yellow/80 font-mono font-medium transition-colors duration-300 h-6">
+                      <span className="leading-6">Read More</span>
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </button>
                   </div>
@@ -135,12 +135,12 @@ const Blogs = () => {
 
         {/* Newsletter CTA */}
         <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 rounded-3xl">
-          <h2 className="text-2xl font-bold font-mono mb-4 bracket-highlight">Join Newsletter for Weekly Summaries</h2>
-          <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 max-w-2xl mx-auto font-mono">
+          <h2 className="text-2xl font-bold font-mono mb-6 bracket-highlight leading-8">Join Newsletter for Weekly Summaries</h2>
+          <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 max-w-2xl mx-auto font-mono leading-7">
             Get weekly summaries of the latest blog posts, plus exclusive content and early access to new articles.
           </p>
-          <button className="btn-primary">
-            Join Newsletter
+          <button className="btn-primary h-12 px-6">
+            <span className="leading-6">Join Newsletter</span>
           </button>
         </section>
       </div>

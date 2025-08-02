@@ -88,12 +88,12 @@ const Resources = () => {
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`flex items-center px-6 py-3 font-mono font-medium transition-all duration-300 rounded-xl ${
+                className={`flex items-center px-6 py-3 font-mono font-medium transition-all duration-300 rounded-xl h-12 ${
                   selectedCategory === category.id ? 'btn-primary' : 'btn-secondary'
                 }`}
               >
                 {category.icon}
-                <span className="ml-2">{category.name}</span>
+                <span className="ml-2 leading-6">{category.name}</span>
               </button>
             ))}
           </div>
@@ -110,15 +110,15 @@ const Resources = () => {
                     <div className="terminal-dot yellow"></div>
                     <div className="terminal-dot green"></div>
                   </div>
-                  <span className="text-coder-yellow font-mono text-sm">~/{resource.category}/{resource.title.toLowerCase().replace(/\s+/g, '_')}</span>
+                  <span className="terminal-path">~/{resource.category}/{resource.title.toLowerCase().replace(/\s+/g, '_')}</span>
                 </div>
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-lg font-semibold font-mono text-coder-black dark:text-coder-white bracket-highlight">{resource.title}</h3>
-                  {resource.locked && <Lock className="h-4 w-4 text-coder-yellow" />}
+                <div className="card-header">
+                  <h3 className="card-title bracket-highlight">{resource.title}</h3>
+                  {resource.locked && <Lock className="h-5 w-5 text-coder-yellow flex-shrink-0" />}
                 </div>
-                <p className="text-coder-yellow/80 mb-4 font-mono text-sm">$ {resource.description}</p>
+                <p className="text-coder-yellow/80 mb-6 font-mono text-sm leading-6">$ {resource.description}</p>
                 <button
-                  className={`w-full py-3 font-mono font-medium transition-all duration-300 flex items-center justify-center rounded-xl ${
+                  className={`w-full py-3 font-mono font-medium transition-all duration-300 flex items-center justify-center rounded-xl h-12 ${
                     resource.locked
                       ? 'bg-transparent border border-coder-gray-600/30 text-coder-gray-600 dark:text-coder-gray-400 cursor-not-allowed'
                       : 'btn-primary'
@@ -128,12 +128,10 @@ const Resources = () => {
                   {resource.locked ? (
                     <>
                       <Lock className="mr-2 h-4 w-4" />
-                      Locked
+                      <span className="leading-6">Locked</span>
                     </>
                   ) : (
-                    <>
-                      Try
-                    </>
+                    <span className="leading-6">Try</span>
                   )}
                 </button>
               </div>
@@ -143,8 +141,8 @@ const Resources = () => {
 
         {/* Download CTA */}
         <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12 rounded-3xl">
-          <h2 className="text-3xl font-bold font-mono mb-4 bracket-highlight">Download Free Developer Toolkit</h2>
-          <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">
+          <h2 className="text-3xl font-bold font-mono mb-6 bracket-highlight leading-10">Download Free Developer Toolkit</h2>
+          <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono leading-8">
             Get instant access to checklists, Notion freebies, and downloadable guides.
           </p>
           <form onSubmit={handleEmailSubmit} className="max-w-md mx-auto">
@@ -154,15 +152,15 @@ const Resources = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="input-field flex-1"
+                className="input-field flex-1 h-12"
                 required
               />
               <button
                 type="submit"
-                className="btn-primary flex items-center justify-center"
+                className="btn-primary flex items-center justify-center h-12"
               >
                 <Download className="mr-2 h-5 w-5" />
-                Download
+                <span className="leading-6">Download</span>
               </button>
             </div>
           </form>

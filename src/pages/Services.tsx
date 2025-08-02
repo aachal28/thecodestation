@@ -59,10 +59,48 @@ const Services = () => {
                     <div className="terminal-dot yellow"></div>
                     <div className="terminal-dot green"></div>
                   </div>
-                  <span className="text-coder-yellow font-mono text-sm">~/services/{service.title.toLowerCase().replace(/[^a-z0-9]/g, '_')}.sh</span>
+                  <span className="terminal-path">~/services/{service.title.toLowerCase().replace(/[^a-z0-9]/g, '_')}.sh</span>
                 </div>
-                <div className="flex items-center mb-6">
-                  <div className="p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mr-4 rounded-xl">
+                <div className="card-header mb-6">
+                  <div className="flex items-center">
+                    <div className="icon-container mr-4">
+                      {service.icon}
+                    </div>
+                    <h3 className="card-title bracket-highlight">{service.title}</h3>
+                  </div>
+                </div>
+                
+                <p className="text-coder-yellow/80 mb-8 text-lg font-mono leading-7">{service.description}</p>
+                
+                <button className="btn-primary w-full flex items-center justify-center h-12">
+                  <Calendar className="mr-2 h-5 w-5" />
+                  {service.cta}
+                </button>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold font-mono mb-12 text-center terminal-prompt leading-10">How We Work Together</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {[
+              { step: '01', title: 'Discovery', desc: 'We discuss your needs and goals' },
+              { step: '02', title: 'Planning', desc: 'I create a customized strategy' },
+              { step: '03', title: 'Execution', desc: 'We bring your vision to life' },
+              { step: '04', title: 'Delivery', desc: 'You receive exceptional results' },
+            ].map((item, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-coder-yellow flex items-center justify-center text-coder-black font-mono font-bold text-xl mx-auto mb-6 border border-coder-yellow rounded-2xl">
+                  {item.step}
+                </div>
+                <h4 className="text-lg font-semibold font-mono mb-4 text-coder-black dark:text-coder-white leading-7">{item.title}</h4>
+                <p className="text-coder-gray-600 dark:text-coder-gray-400 text-sm font-mono leading-6">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
                     {service.icon}
                   </div>
                   <h3 className="text-xl font-bold font-mono text-coder-black dark:text-coder-white bracket-highlight">{service.title}</h3>

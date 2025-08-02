@@ -48,10 +48,10 @@ const Newsletter = () => {
           <h2 className="text-3xl font-bold font-mono mb-12 text-center terminal-prompt">What's Inside</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: <Zap className="h-6 w-6" />, title: 'Latest Tools', desc: 'Cutting-edge developer tools' },
-              { icon: <Code className="h-6 w-6" />, title: 'Coding Tips', desc: 'Weekly insights and tricks' },
-              { icon: <Briefcase className="h-6 w-6" />, title: 'Project Ideas', desc: 'Build your portfolio' },
-              { icon: <Target className="h-6 w-6" />, title: 'Cheat Sheets', desc: 'Quick reference guides' },
+              { icon: <Zap className="h-8 w-8" />, title: 'Latest Tools', desc: 'Cutting-edge developer tools' },
+              { icon: <Code className="h-8 w-8" />, title: 'Coding Tips', desc: 'Weekly insights and tricks' },
+              { icon: <Briefcase className="h-8 w-8" />, title: 'Project Ideas', desc: 'Build your portfolio' },
+              { icon: <Target className="h-8 w-8" />, title: 'Cheat Sheets', desc: 'Quick reference guides' },
             ].map((item, index) => (
               <div key={index} className="terminal-box text-center">
                 <div className="terminal-header">
@@ -60,13 +60,13 @@ const Newsletter = () => {
                     <div className="terminal-dot yellow"></div>
                     <div className="terminal-dot green"></div>
                   </div>
-                  <span className="text-coder-yellow font-mono text-sm">~/{item.title.toLowerCase().replace(/\s+/g, '_')}.txt</span>
+                  <span className="terminal-path">~/{item.title.toLowerCase().replace(/\s+/g, '_')}.txt</span>
                 </div>
-                <div className="p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mx-auto mb-4 w-fit rounded-xl">
+                <div className="icon-container mx-auto mb-6">
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">{item.title}</h3>
-                <p className="text-coder-yellow/80 font-mono text-sm">$ cat {item.desc.toLowerCase()}</p>
+                <h3 className="text-lg font-semibold font-mono mb-4 text-coder-black dark:text-coder-white bracket-highlight leading-7">{item.title}</h3>
+                <p className="text-coder-yellow/80 font-mono text-sm leading-6">$ cat {item.desc.toLowerCase()}</p>
               </div>
             ))}
           </div>
@@ -82,22 +82,22 @@ const Newsletter = () => {
                 <div className="terminal-dot yellow"></div>
                 <div className="terminal-dot green"></div>
               </div>
-              <span className="text-coder-yellow font-mono text-sm">~/newsletter/issue_47.md</span>
+              <span className="terminal-path">~/newsletter/issue_47.md</span>
             </div>
             <div className="border-l-4 border-coder-yellow pl-6">
-              <h3 className="text-xl font-semibold font-mono mb-4 text-coder-black dark:text-coder-white terminal-prompt">TheCodeStation Weekly #47</h3>
-              <div className="space-y-4 text-coder-yellow/80 font-mono text-sm">
+              <h3 className="text-xl font-semibold font-mono mb-6 text-coder-black dark:text-coder-white terminal-prompt leading-8">TheCodeStation Weekly #47</h3>
+              <div className="space-y-6 text-coder-yellow/80 font-mono text-sm">
                 <div>
-                  <h4 className="font-semibold text-coder-yellow mb-2 terminal-prompt">Tool of the Week</h4>
-                  <p>Cursor AI - The AI-first code editor that's changing how we write code.</p>
+                  <h4 className="font-semibold text-coder-yellow mb-3 terminal-prompt leading-6">Tool of the Week</h4>
+                  <p className="leading-6">Cursor AI - The AI-first code editor that's changing how we write code.</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-coder-yellow mb-2 terminal-prompt">Coding Tip</h4>
-                  <p>Master React Server Components with practical examples and best practices.</p>
+                  <h4 className="font-semibold text-coder-yellow mb-3 terminal-prompt leading-6">Coding Tip</h4>
+                  <p className="leading-6">Master React Server Components with practical examples and best practices.</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-coder-yellow mb-2 terminal-prompt">Project Idea</h4>
-                  <p>Build a real-time chat app using WebSockets and React - complete tutorial included.</p>
+                  <h4 className="font-semibold text-coder-yellow mb-3 terminal-prompt leading-6">Project Idea</h4>
+                  <p className="leading-6">Build a real-time chat app using WebSockets and React - complete tutorial included.</p>
                 </div>
               </div>
             </div>
@@ -107,8 +107,8 @@ const Newsletter = () => {
         {/* Newsletter Signup */}
         <section className="mb-16">
           <div className="max-w-2xl mx-auto text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12 rounded-3xl">
-            <h2 className="text-3xl font-bold font-mono mb-6 bracket-highlight">Join the Free Vault</h2>
-            <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 font-mono">
+            <h2 className="text-3xl font-bold font-mono mb-8 bracket-highlight leading-10">Join the Free Vault</h2>
+            <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 font-mono leading-8">
               Get instant access to exclusive resources plus weekly insights that actually matter.
             </p>
             
@@ -119,18 +119,18 @@ const Newsletter = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
-                  className="input-field flex-1"
+                  className="input-field flex-1 h-12"
                   required
                 />
                 <button
                   type="submit"
-                  className="btn-primary flex items-center justify-center"
+                  className="btn-primary flex items-center justify-center h-12"
                 >
                   <Mail className="mr-2 h-5 w-5" />
-                  Get Access
+                  <span className="leading-6">Get Access</span>
                 </button>
               </div>
-              <p className="text-sm text-coder-gray-600 dark:text-coder-gray-400 font-mono">
+              <p className="text-sm text-coder-gray-600 dark:text-coder-gray-400 font-mono leading-6 mt-4">
                 Free forever. Unsubscribe anytime. No spam, ever. 🚫
               </p>
             </form>
