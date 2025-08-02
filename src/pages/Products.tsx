@@ -78,7 +78,7 @@ const Products = () => {
         <section className="mb-12">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
-              <div key={category} className="tag px-6 py-3 font-medium">
+              <div key={category} className="px-6 py-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow font-mono font-medium rounded-full">
                 {category}
               </div>
             ))}
@@ -91,26 +91,26 @@ const Products = () => {
             {products.map((product) => (
               <div key={product.id} className="card overflow-hidden">
                 {/* Product Image */}
-                <div className="h-48 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center rounded-t-xl">
+                <div className="h-48 bg-gradient-to-br from-coder-yellow to-coder-yellow/80 flex items-center justify-center rounded-t-2xl">
                   <div className="text-coder-black text-center">
                     {product.icon}
-                    <p className="mt-2 font-mono font-semibold leading-6">Product Image</p>
+                    <p className="mt-2 font-mono font-semibold">Product Image</p>
                   </div>
                 </div>
 
                 {/* Product Info */}
                 <div className="p-6">
-                  <div className="card-header">
-                    <span className="tag">{product.category}</span>
-                    <span className="text-2xl font-bold font-mono text-coder-black dark:text-coder-white leading-8">{product.price}</span>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="px-3 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-sm font-mono rounded-full">{product.category}</span>
+                    <span className="text-2xl font-bold font-mono text-coder-black dark:text-coder-white">{product.price}</span>
                   </div>
                   
-                  <h3 className="card-title mb-4 bracket-highlight">{product.title}</h3>
-                  <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 font-mono text-sm leading-6">{product.description}</p>
+                  <h3 className="text-xl font-semibold font-mono text-coder-black dark:text-coder-white mb-3 bracket-highlight">{product.title}</h3>
+                  <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 font-mono text-sm">{product.description}</p>
                   
                   {/* CTA Button */}
                   <button
-                    className={`w-full py-3 font-mono font-semibold transition-all duration-300 flex items-center justify-center rounded-xl h-12 ${
+                    className={`w-full py-3 font-mono font-semibold transition-all duration-300 flex items-center justify-center rounded-xl ${
                       product.available
                         ? 'btn-primary'
                         : 'bg-transparent border border-coder-gray-600/30 text-coder-gray-600 dark:text-coder-gray-400 cursor-not-allowed'
@@ -120,10 +120,10 @@ const Products = () => {
                     {product.available ? (
                       <>
                         <ShoppingCart className="mr-2 h-4 w-4" />
-                        <span className="leading-6">Buy on Gumroad</span>
+                        Buy on Gumroad
                       </>
                     ) : (
-                      <span className="leading-6">Coming Soon</span>
+                      'Coming Soon'
                     )}
                   </button>
                 </div>
@@ -134,12 +134,12 @@ const Products = () => {
 
         {/* Newsletter CTA */}
         <section className="text-center card p-8">
-          <h2 className="text-2xl font-bold font-mono mb-6 terminal-prompt leading-8">Stay Updated on New Products</h2>
-          <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 font-mono leading-7">
+          <h2 className="text-2xl font-bold font-mono mb-4 terminal-prompt">Stay Updated on New Products</h2>
+          <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 font-mono">
             Be the first to know about new product launches and exclusive discounts.
           </p>
-          <button className="btn-primary h-12 px-6">
-            <span className="leading-6">Join the Newsletter</span>
+          <button className="btn-primary">
+            Join the Newsletter
           </button>
         </section>
       </div>

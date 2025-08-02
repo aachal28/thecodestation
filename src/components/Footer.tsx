@@ -8,28 +8,28 @@ const Footer = () => {
         <div className="text-center">
           {/* Social Links */}
           <div className="flex justify-center space-x-6 mb-8">
-            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl w-10 h-10 flex items-center justify-center">
+            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl">
               <Mail className="h-6 w-6" />
             </a>
-            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl w-10 h-10 flex items-center justify-center">
+            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl">
               <Instagram className="h-6 w-6" />
             </a>
-            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl w-10 h-10 flex items-center justify-center">
+            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl">
               <Youtube className="h-6 w-6" />
             </a>
-            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl w-10 h-10 flex items-center justify-center">
+            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl">
               <Linkedin className="h-6 w-6" />
             </a>
-            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl w-10 h-10 flex items-center justify-center">
+            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl">
               <Twitter className="h-6 w-6" />
             </a>
-            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl w-10 h-10 flex items-center justify-center">
+            <a href="#" className="text-coder-gray-500 hover:text-coder-yellow transition-all duration-300 hover:shadow-glow p-2 border border-transparent hover:border-coder-yellow/30 rounded-xl">
               <Github className="h-6 w-6" />
             </a>
           </div>
           
           {/* Copyright */}
-          <p className="text-coder-gray-500 font-mono text-sm leading-6">
+          <p className="text-coder-gray-500 font-mono text-sm">
             <span className="text-coder-yellow">©</span> 2024 TheCodeStation. Made with <span className="text-coder-yellow">❤️</span> by Aachal Pardeshi
           </p>
         </div>

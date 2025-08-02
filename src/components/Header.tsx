@@ -25,7 +25,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2 text-xl font-bold font-mono text-coder-yellow hover:animate-glow transition-all duration-300">
             <Code2 className="h-8 w-8" />
-            <span className="bracket-highlight leading-8">TheCodeStation</span>
+            <span className="bracket-highlight">TheCodeStation</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -34,7 +34,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-mono font-medium transition-all duration-300 hover:text-coder-yellow hover:shadow-glow px-2 py-1 h-8 flex items-center leading-6 ${
+                className={`text-sm font-mono font-medium transition-all duration-300 hover:text-coder-yellow hover:shadow-glow px-2 py-1 ${
                   location.pathname === item.href 
                     ? 'text-coder-yellow border-b border-coder-yellow' 
                     : 'text-coder-black dark:text-coder-white'
@@ -47,7 +47,7 @@ const Header = () => {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 border border-coder-yellow/30 text-coder-yellow hover:bg-coder-yellow hover:text-coder-black transition-all duration-300 hover:shadow-glow rounded-xl w-10 h-10 flex items-center justify-center"
+              className="p-2 border border-coder-yellow/30 text-coder-yellow hover:bg-coder-yellow hover:text-coder-black transition-all duration-300 hover:shadow-glow rounded-xl"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
@@ -58,14 +58,14 @@ const Header = () => {
           <div className="md:hidden flex items-center space-x-2">
             <button
               onClick={toggleTheme}
-              className="p-2 border border-coder-yellow/30 text-coder-yellow hover:bg-coder-yellow hover:text-coder-black transition-all duration-300 rounded-xl w-10 h-10 flex items-center justify-center"
+              className="p-2 border border-coder-yellow/30 text-coder-yellow hover:bg-coder-yellow hover:text-coder-black transition-all duration-300 rounded-xl"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-coder-black dark:text-coder-white hover:text-coder-yellow transition-colors duration-300 w-10 h-10 flex items-center justify-center"
+              className="text-coder-black dark:text-coder-white hover:text-coder-yellow transition-colors duration-300"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -80,7 +80,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-3 py-2 text-sm font-mono font-medium transition-all duration-300 h-10 flex items-center leading-6 ${
+                  className={`block px-3 py-2 text-sm font-mono font-medium transition-all duration-300 ${
                     location.pathname === item.href
                       ? 'text-coder-yellow bg-coder-yellow/10'
                       : 'text-coder-black dark:text-coder-white hover:text-coder-yellow hover:bg-coder-yellow/5'

@@ -64,9 +64,9 @@ const MyStation = () => {
 
         {/* Favorite Songs */}
         <section className="mb-16">
-          <div className="section-header">
-            <Music className="section-icon" />
-            <h2 className="section-title terminal-prompt">Favorite Songs Playlist</h2>
+          <div className="flex items-center mb-8">
+            <Music className="h-8 w-8 text-coder-yellow mr-4" />
+            <h2 className="text-3xl font-bold font-mono terminal-prompt">Favorite Songs Playlist</h2>
           </div>
           <div className="terminal-box">
             <div className="terminal-header">
@@ -75,12 +75,12 @@ const MyStation = () => {
                 <div className="terminal-dot yellow"></div>
                 <div className="terminal-dot green"></div>
               </div>
-              <span className="terminal-path">~/music/playlist.m3u</span>
+              <span className="text-coder-yellow font-mono text-sm">~/music/playlist.m3u</span>
             </div>
             <ul className="space-y-3">
               {favSongs.map((song, index) => (
-                <li key={index} className="flex items-center text-coder-yellow/80 font-mono leading-7">
-                  <span className="w-8 h-8 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow text-sm flex items-center justify-center mr-4 rounded-xl flex-shrink-0">
+                <li key={index} className="flex items-center text-coder-yellow/80 font-mono">
+                  <span className="w-6 h-6 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow text-sm flex items-center justify-center mr-4 rounded-lg">
                     {index + 1}
                   </span>
                   {song}
@@ -92,19 +92,19 @@ const MyStation = () => {
 
         {/* Favorite Books */}
         <section className="mb-16">
-          <div className="section-header">
-            <Book className="section-icon" />
-            <h2 className="section-title terminal-prompt">Favorite Books</h2>
+          <div className="flex items-center mb-8">
+            <Book className="h-8 w-8 text-coder-yellow mr-4" />
+            <h2 className="text-3xl font-bold font-mono terminal-prompt">Favorite Books</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {favBooks.map((book, index) => (
               <div key={index} className="card p-6">
-                <div className="h-32 bg-coder-yellow/20 border border-coder-yellow/30 flex items-center justify-center mb-6 rounded-xl">
+                <div className="h-32 bg-coder-yellow/20 border border-coder-yellow/30 flex items-center justify-center mb-4 rounded-xl">
                   <Book className="h-8 w-8 text-coder-yellow" />
                 </div>
-                <h3 className="font-semibold font-mono mb-3 text-coder-black dark:text-coder-white bracket-highlight leading-6">{book.title}</h3>
-                <p className="text-sm text-coder-gray-600 dark:text-coder-gray-400 font-mono mb-4 leading-6">{book.author}</p>
-                <a href={book.link} className="text-coder-yellow hover:text-coder-yellow/80 font-mono text-sm transition-colors duration-300 leading-6">
+                <h3 className="font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">{book.title}</h3>
+                <p className="text-sm text-coder-gray-600 dark:text-coder-gray-400 font-mono mb-4">{book.author}</p>
+                <a href={book.link} className="text-coder-yellow hover:text-coder-yellow/80 font-mono text-sm transition-colors duration-300">
                   View on Amazon →
                 </a>
               </div>
@@ -114,15 +114,15 @@ const MyStation = () => {
 
         {/* Favorite Shows & YouTubers */}
         <section className="mb-16">
-          <div className="section-header">
-            <Tv className="section-icon" />
-            <h2 className="section-title terminal-prompt">Favorite Shows & YouTubers</h2>
+          <div className="flex items-center mb-8">
+            <Tv className="h-8 w-8 text-coder-yellow mr-4" />
+            <h2 className="text-3xl font-bold font-mono terminal-prompt">Favorite Shows & YouTubers</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {favShows.map((show, index) => (
               <div key={index} className="card p-6">
-                <h3 className="text-lg font-semibold font-mono mb-3 text-coder-black dark:text-coder-white bracket-highlight leading-7">{show.title}</h3>
-                <p className="text-coder-gray-600 dark:text-coder-gray-400 font-mono text-sm leading-6">{show.note}</p>
+                <h3 className="text-lg font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">{show.title}</h3>
+                <p className="text-coder-gray-600 dark:text-coder-gray-400 font-mono text-sm">{show.note}</p>
               </div>
             ))}
           </div>
@@ -130,23 +130,23 @@ const MyStation = () => {
 
         {/* Tools I Use Daily */}
         <section className="mb-16">
-          <div className="section-header">
-            <Wrench className="section-icon" />
-            <h2 className="section-title terminal-prompt">Tools I Use Daily</h2>
+          <div className="flex items-center mb-8">
+            <Wrench className="h-8 w-8 text-coder-yellow mr-4" />
+            <h2 className="text-3xl font-bold font-mono terminal-prompt">Tools I Use Daily</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {dailyTools.map((tool, index) => (
               <div key={index} className="card p-6">
-                <div className="card-header">
-                  <h3 className="card-title bracket-highlight">{tool.name}</h3>
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-semibold font-mono text-coder-black dark:text-coder-white bracket-highlight">{tool.name}</h3>
                   {tool.affiliate && (
-                    <span className="px-2 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-xs font-mono rounded-full h-6 flex items-center leading-6">
+                    <span className="px-2 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-xs font-mono rounded-full">
                       Affiliate
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-coder-gray-600 dark:text-coder-gray-400 font-mono mb-4 leading-6">{tool.category}</p>
-                <button className="text-coder-yellow hover:text-coder-yellow/80 font-mono text-sm transition-colors duration-300 leading-6">
+                <p className="text-sm text-coder-gray-600 dark:text-coder-gray-400 font-mono mb-4">{tool.category}</p>
+                <button className="text-coder-yellow hover:text-coder-yellow/80 font-mono text-sm transition-colors duration-300">
                   Try it →
                 </button>
               </div>
@@ -156,9 +156,9 @@ const MyStation = () => {
 
         {/* My Desk Setup */}
         <section className="mb-16">
-          <div className="section-header">
-            <Monitor className="section-icon" />
-            <h2 className="section-title terminal-prompt">My Desk Setup</h2>
+          <div className="flex items-center mb-8">
+            <Monitor className="h-8 w-8 text-coder-yellow mr-4" />
+            <h2 className="text-3xl font-bold font-mono terminal-prompt">My Desk Setup</h2>
           </div>
           <div className="terminal-box">
             <div className="terminal-header">
@@ -167,13 +167,13 @@ const MyStation = () => {
                 <div className="terminal-dot yellow"></div>
                 <div className="terminal-dot green"></div>
               </div>
-              <span className="terminal-path">~/setup/hardware.list</span>
+              <span className="text-coder-yellow font-mono text-sm">~/setup/hardware.list</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {deskSetup.map((item, index) => (
-                <div key={index} className="flex items-center p-4 bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 rounded-xl h-12">
-                  <span className="w-2 h-2 bg-coder-yellow mr-3 rounded-full flex-shrink-0"></span>
-                  <span className="font-mono text-coder-yellow/90 leading-6">{item}</span>
+                <div key={index} className="flex items-center p-4 bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 rounded-xl">
+                  <span className="w-2 h-2 bg-coder-yellow mr-3 rounded-full"></span>
+                  <span className="font-mono text-coder-yellow/90">{item}</span>
                 </div>
               ))}
             </div>
@@ -182,15 +182,15 @@ const MyStation = () => {
 
         {/* Past Collabs */}
         <section className="mb-16">
-          <div className="section-header">
-            <Handshake className="section-icon" />
-            <h2 className="section-title terminal-prompt">Past Collaborations</h2>
+          <div className="flex items-center mb-8">
+            <Handshake className="h-8 w-8 text-coder-yellow mr-4" />
+            <h2 className="text-3xl font-bold font-mono terminal-prompt">Past Collaborations</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {collaborations.map((brand, index) => (
               <div key={index} className="card p-6 text-center">
-                <div className="h-16 bg-coder-yellow/20 border border-coder-yellow/30 flex items-center justify-center mb-4 rounded-xl">
-                  <span className="font-mono text-sm text-coder-yellow leading-6">{brand}</span>
+                <div className="h-16 bg-coder-yellow/20 border border-coder-yellow/30 flex items-center justify-center mb-2 rounded-xl">
+                  <span className="font-mono text-sm text-coder-yellow">{brand}</span>
                 </div>
               </div>
             ))}
@@ -199,16 +199,16 @@ const MyStation = () => {
 
         {/* Projects I've Built */}
         <section className="mb-16">
-          <div className="section-header">
-            <Folder className="section-icon" />
-            <h2 className="section-title terminal-prompt">Projects I've Built</h2>
+          <div className="flex items-center mb-8">
+            <Folder className="h-8 w-8 text-coder-yellow mr-4" />
+            <h2 className="text-3xl font-bold font-mono terminal-prompt">Projects I've Built</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <div key={index} className="card p-6">
-                <h3 className="text-lg font-semibold font-mono mb-3 text-coder-black dark:text-coder-white bracket-highlight leading-7">{project.title}</h3>
-                <p className="text-coder-gray-600 dark:text-coder-gray-400 font-mono text-sm mb-4 leading-6">{project.tech}</p>
-                <button className="text-coder-yellow hover:text-coder-yellow/80 font-mono text-sm transition-colors duration-300 leading-6">
+                <h3 className="text-lg font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">{project.title}</h3>
+                <p className="text-coder-gray-600 dark:text-coder-gray-400 font-mono text-sm mb-4">{project.tech}</p>
+                <button className="text-coder-yellow hover:text-coder-yellow/80 font-mono text-sm transition-colors duration-300">
                   View Project →
                 </button>
               </div>
@@ -219,12 +219,12 @@ const MyStation = () => {
         {/* Book a Call */}
         <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-12 rounded-3xl">
           <Calendar className="h-16 w-16 text-coder-yellow mx-auto mb-6" />
-          <h2 className="text-3xl font-bold font-mono mb-6 bracket-highlight leading-10">Book a Call</h2>
-          <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono leading-8">
+          <h2 className="text-3xl font-bold font-mono mb-4 bracket-highlight">Book a Call</h2>
+          <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">
             Ready to work together? Let's schedule a call to discuss your project or collaboration ideas.
           </p>
-          <button className="btn-primary h-12 px-6">
-            <span className="leading-6">Schedule on Calendly</span>
+          <button className="btn-primary">
+            Schedule on Calendly
           </button>
         </section>
       </div>
