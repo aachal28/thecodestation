@@ -79,7 +79,7 @@ const MyStation = () => {
             </div>
             <ul className="space-y-3">
               {favSongs.map((song, index) => (
-                <li key={index} className="flex items-center text-coder-yellow/80 font-mono">
+                <li key={index} className="flex items-center text-coder-gray-600 dark:text-coder-yellow/80 font-mono">
                   <span className="w-6 h-6 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow text-sm flex items-center justify-center mr-4 rounded-lg">
                     {index + 1}
                   </span>
@@ -173,7 +173,7 @@ const MyStation = () => {
               {deskSetup.map((item, index) => (
                 <div key={index} className="flex items-center p-4 bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 rounded-xl">
                   <span className="w-2 h-2 bg-coder-yellow mr-3 rounded-full"></span>
-                  <span className="font-mono text-coder-yellow/90">{item}</span>
+                  <span className="font-mono text-coder-gray-700 dark:text-coder-yellow/90">{item}</span>
                 </div>
               ))}
             </div>
