@@ -89,7 +89,7 @@ const Resources = () => {
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
                 className={`flex items-center px-6 py-3 font-mono font-medium transition-all duration-300 rounded-xl ${
-                  selectedCategory === category.id ? 'btn-primary' : 'btn-secondary'
+                  selectedCategory === category.id ? 'btn-primary' : 'bg-coder-white dark:bg-coder-black border-2 border-coder-yellow text-coder-yellow font-mono font-medium hover:bg-coder-yellow hover:text-coder-black hover:shadow-glow'
                 }`}
               >
                 {category.icon}
