@@ -68,7 +68,7 @@ const Services = () => {
                   <h3 className="text-xl font-bold font-mono text-coder-black dark:text-coder-white bracket-highlight">{service.title}</h3>
                 </div>
                 
-                <p className="text-coder-yellow/80 mb-8 text-lg font-mono">{service.description}</p>
+                <p className="text-coder-gray-600 dark:text-coder-yellow/80 mb-8 text-lg font-mono">{service.description}</p>
                 
                 <button className="btn-primary w-full flex items-center justify-center">
                   <Calendar className="mr-2 h-5 w-5" />

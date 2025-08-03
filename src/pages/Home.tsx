@@ -45,8 +45,8 @@ const Home = () => {
                 <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow w-fit mx-auto mb-4 rounded-xl">
                   <Wrench className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-semibold font-mono mb-2 bracket-highlight">Tools</h3>
-                <p className="text-coder-yellow/80 font-mono text-sm">$ cat curated_resources.txt</p>
+                <h3 className="text-xl font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">Tools</h3>
+                <p className="text-coder-gray-600 dark:text-coder-yellow/80 font-mono text-sm">$ cat curated_resources.txt</p>
               </Link>
               
               <Link to="/products" className="terminal-box text-center hover:scale-105 transition-all duration-300">
@@ -61,8 +61,8 @@ const Home = () => {
                 <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow w-fit mx-auto mb-4 rounded-xl">
                   <ShoppingCart className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-semibold font-mono mb-2 bracket-highlight">Products</h3>
-                <p className="text-coder-yellow/80 font-mono text-sm">$ ls digital_products/</p>
+                <h3 className="text-xl font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">Products</h3>
+                <p className="text-coder-gray-600 dark:text-coder-yellow/80 font-mono text-sm">$ ls digital_products/</p>
               </Link>
               
               <Link to="/blogs" className="terminal-box text-center hover:scale-105 transition-all duration-300">
@@ -77,8 +77,8 @@ const Home = () => {
                 <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow w-fit mx-auto mb-4 rounded-xl">
                   <BookOpen className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-semibold font-mono mb-2 bracket-highlight">Blogs</h3>
-                <p className="text-coder-yellow/80 font-mono text-sm">$ vim latest_posts.md</p>
+                <h3 className="text-xl font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">Blogs</h3>
+                <p className="text-coder-gray-600 dark:text-coder-yellow/80 font-mono text-sm">$ vim latest_posts.md</p>
               </Link>
             </div>
           </div>

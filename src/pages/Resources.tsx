@@ -116,7 +116,7 @@ const Resources = () => {
                   <h3 className="text-lg font-semibold font-mono text-coder-black dark:text-coder-white bracket-highlight">{resource.title}</h3>
                   {resource.locked && <Lock className="h-4 w-4 text-coder-yellow" />}
                 </div>
-                <p className="text-coder-yellow/80 mb-4 font-mono text-sm">$ {resource.description}</p>
+                <p className="text-coder-gray-600 dark:text-coder-yellow/80 mb-4 font-mono text-sm">$ {resource.description}</p>
                 <button
                   className={`w-full py-3 font-mono font-medium transition-all duration-300 flex items-center justify-center rounded-xl ${
                     resource.locked

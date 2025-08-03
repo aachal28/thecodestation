@@ -62,7 +62,7 @@ const About = () => {
               <span className="text-coder-yellow font-mono text-sm">~/mission.txt</span>
             </div>
             <h2 className="text-3xl font-bold font-mono mb-6 bracket-highlight">My Mission</h2>
-            <p className="text-2xl text-coder-yellow/90 font-mono">
+            <p className="text-2xl text-coder-gray-700 dark:text-coder-yellow/90 font-mono">
               "To simplify tech & help coders grow faster."
             </p>
           </div>
@@ -83,10 +83,10 @@ const About = () => {
             <p className="text-lg text-coder-yellow/80 mb-6 leading-relaxed font-mono">
               My coding journey began with curiosity and a laptop. What started as simple HTML pages evolved into a passion for creating digital solutions that make a difference.
             </p>
-            <p className="text-lg text-coder-yellow/80 mb-6 leading-relaxed font-mono">
+            <p className="text-lg text-coder-gray-600 dark:text-coder-yellow/80 mb-6 leading-relaxed font-mono">
               TheCodeStation was born from my desire to simplify the complex world of technology. I believe that with the right resources, guidance, and community, every developer can achieve their goals faster.
             </p>
-            <p className="text-lg text-coder-yellow/80 leading-relaxed font-mono">
+            <p className="text-lg text-coder-gray-600 dark:text-coder-yellow/80 leading-relaxed font-mono">
               Today, I create content that bridges the gap between cutting-edge technology and practical implementation, helping thousands of developers stay ahead in their careers.
             </p>
           </div>

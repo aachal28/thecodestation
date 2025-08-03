@@ -66,7 +66,7 @@ const Newsletter = () => {
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">{item.title}</h3>
-                <p className="text-coder-yellow/80 font-mono text-sm">$ cat {item.desc.toLowerCase()}</p>
+                <p className="text-coder-gray-600 dark:text-coder-yellow/80 font-mono text-sm">$ cat {item.desc.toLowerCase()}</p>
               </div>
             ))}
           </div>
@@ -89,15 +89,15 @@ const Newsletter = () => {
               <div className="space-y-4 text-coder-yellow/80 font-mono text-sm">
                 <div>
                   <h4 className="font-semibold text-coder-yellow mb-2 terminal-prompt">Tool of the Week</h4>
-                  <p>Cursor AI - The AI-first code editor that's changing how we write code.</p>
+                  <p className="text-coder-gray-600 dark:text-coder-yellow/80">Cursor AI - The AI-first code editor that's changing how we write code.</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-coder-yellow mb-2 terminal-prompt">Coding Tip</h4>
-                  <p>Master React Server Components with practical examples and best practices.</p>
+                  <p className="text-coder-gray-600 dark:text-coder-yellow/80">Master React Server Components with practical examples and best practices.</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-coder-yellow mb-2 terminal-prompt">Project Idea</h4>
-                  <p>Build a real-time chat app using WebSockets and React - complete tutorial included.</p>
+                  <p className="text-coder-gray-600 dark:text-coder-yellow/80">Build a real-time chat app using WebSockets and React - complete tutorial included.</p>
                 </div>
               </div>
             </div>
