@@ -73,7 +73,7 @@ const Blogs = () => {
         {/* Header */}
         <section className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold font-mono mb-4 text-coder-black dark:text-coder-white">
-            <span className="text-coder-yellow">Developer</span> <span className="text-coder-yellow">Blog</span>
+            <span className="bracket-highlight">Developer</span> <span className="terminal-prompt">Blog</span>
           </h1>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 max-w-3xl mx-auto font-mono">
             Tutorials, book reviews, learning stories, and monthly roundups - everything to help you grow as a developer.
@@ -115,7 +115,7 @@ const Blogs = () => {
                       {blog.readTime}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold font-mono mb-3 text-coder-black dark:text-coder-white">{blog.title}</h3>
+                  <h3 className="text-xl font-semibold font-mono mb-3 text-coder-black dark:text-coder-white bracket-highlight">{blog.title}</h3>
                   <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-4 font-mono text-sm">{blog.excerpt}</p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center text-coder-gray-600 dark:text-coder-gray-400 text-sm font-mono">
@@ -135,7 +135,7 @@ const Blogs = () => {
 
         {/* Newsletter CTA */}
         <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 rounded-3xl">
-          <h2 className="text-2xl font-bold font-mono mb-4 text-coder-yellow">Join Newsletter for Weekly Summaries</h2>
+          <h2 className="text-2xl font-bold font-mono mb-4 bracket-highlight">Join Newsletter for Weekly Summaries</h2>
           <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 max-w-2xl mx-auto font-mono">
             Get weekly summaries of the latest blog posts, plus exclusive content and early access to new articles.
           </p>

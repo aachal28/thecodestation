@@ -19,42 +19,42 @@ const Resources = () => {
       title: 'ChatGPT',
       category: 'ai',
       description: 'AI-powered coding assistant',
-      url: 'https://chat.openai.com',
+      locked: false,
     },
     {
       id: 2,
       title: 'VS Code Extensions Pack',
       category: 'dev',
       description: 'Essential extensions for developers',
-      url: '#',
+      locked: true,
     },
     {
       id: 3,
       title: 'Notion Templates',
       category: 'productivity',
       description: 'Project management templates',
-      url: 'https://notion.so',
+      locked: true,
     },
     {
       id: 4,
       title: 'Webflow',
       category: 'no-code',
       description: 'Visual web development platform',
-      url: 'https://webflow.com',
+      locked: false,
     },
     {
       id: 5,
       title: 'GitHub Copilot',
       category: 'ai',
       description: 'AI pair programmer',
-      url: 'https://github.com/features/copilot',
+      locked: false,
     },
     {
       id: 6,
       title: 'Figma',
       category: 'dev',
       description: 'Design and prototyping tool',
-      url: 'https://figma.com',
+      locked: false,
     },
   ];
 
@@ -74,7 +74,7 @@ const Resources = () => {
         {/* Header */}
         <section className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold font-mono mb-4 text-coder-black dark:text-coder-white">
-            <span className="text-coder-yellow">Developer</span> <span className="text-coder-yellow">Resources</span>
+            <span className="bracket-highlight">Developer</span> <span className="terminal-prompt">Resources</span>
           </h1>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 max-w-3xl mx-auto font-mono">
             Curated collection of the best tools and resources to supercharge your development workflow.
@@ -103,24 +103,39 @@ const Resources = () => {
         <section className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredResources.map((resource) => (
-              <div key={resource.id} className="card p-6">
-                <div className="h-32 bg-coder-yellow/20 border border-coder-yellow/30 flex items-center justify-center mb-4 rounded-xl">
-                  <span className="text-coder-yellow font-mono font-semibold">{resource.title}</span>
+              <div key={resource.id} className="terminal-box">
+                <div className="terminal-header">
+                  <div className="terminal-dots">
+                    <div className="terminal-dot red"></div>
+                    <div className="terminal-dot yellow"></div>
+                    <div className="terminal-dot green"></div>
+                  </div>
+                  <span className="text-coder-yellow font-mono text-sm">~/{resource.category}/{resource.title.toLowerCase().replace(/\s+/g, '_')}</span>
                 </div>
-                <span className="px-3 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-sm font-mono rounded-full mb-3 inline-block">
-                  {resource.category.toUpperCase()}
-                </span>
-                <h3 className="text-lg font-semibold font-mono text-coder-black dark:text-coder-white mb-2">{resource.title}</h3>
-                <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-4 font-mono text-sm">{resource.description}</p>
-                <a
-                  href={resource.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary w-full flex items-center justify-center"
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-lg font-semibold font-mono text-coder-black dark:text-coder-white bracket-highlight">{resource.title}</h3>
+                  {resource.locked && <Lock className="h-4 w-4 text-coder-yellow" />}
+                </div>
+                <p className="text-coder-gray-600 dark:text-coder-yellow/80 mb-4 font-mono text-sm">$ {resource.description}</p>
+                <button
+                  className={`w-full py-3 font-mono font-medium transition-all duration-300 flex items-center justify-center rounded-xl ${
+                    resource.locked
+                      ? 'bg-transparent border border-coder-gray-600/30 text-coder-gray-600 dark:text-coder-gray-400 cursor-not-allowed'
+                      : 'btn-primary'
+                  }`}
+                  disabled={resource.locked}
                 >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Try Now
-                </a>
+                  {resource.locked ? (
+                    <>
+                      <Lock className="mr-2 h-4 w-4" />
+                      Locked
+                    </>
+                  ) : (
+                    <>
+                      Try
+                    </>
+                  )}
+                </button>
               </div>
             ))}
           </div>
@@ -128,7 +143,7 @@ const Resources = () => {
 
         {/* Download CTA */}
         <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-8 md:p-12 rounded-3xl">
-          <h2 className="text-3xl font-bold font-mono mb-4 text-coder-yellow">Download Free Developer Toolkit</h2>
+          <h2 className="text-3xl font-bold font-mono mb-4 bracket-highlight">Download Free Developer Toolkit</h2>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">
             Get instant access to checklists, Notion freebies, and downloadable guides.
           </p>
