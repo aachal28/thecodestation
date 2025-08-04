@@ -41,7 +41,7 @@ const Services = () => {
         {/* Header */}
         <section className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold font-mono mb-4 text-coder-black dark:text-coder-white">
-            <span className="terminal-prompt">Let's Build or</span> <span className="bracket-highlight">Grow Together</span> 💼
+            <span className="text-coder-yellow">Let's Build or</span> <span className="text-coder-yellow">Grow Together</span> 💼
           </h1>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 max-w-3xl mx-auto font-mono">
             Professional services to help you build, grow, and succeed in the digital world.
@@ -65,7 +65,7 @@ const Services = () => {
                   <div className="p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mr-4 rounded-xl">
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-bold font-mono text-coder-black dark:text-coder-white bracket-highlight">{service.title}</h3>
+                  <h3 className="text-xl font-bold font-mono text-coder-black dark:text-coder-white">{service.title}</h3>
                 </div>
                 
                 <p className="text-coder-gray-600 dark:text-coder-yellow/80 mb-8 text-lg font-mono">{service.description}</p>
@@ -81,7 +81,7 @@ const Services = () => {
 
         {/* Process Section */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold font-mono mb-12 text-center terminal-prompt">How We Work Together</h2>
+          <h2 className="text-3xl font-bold font-mono mb-12 text-center text-coder-yellow">How We Work Together</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
               { step: '01', title: 'Discovery', desc: 'We discuss your needs and goals' },
@@ -102,7 +102,7 @@ const Services = () => {
 
         {/* CTA Section */}
         <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-12 rounded-3xl">
-          <h2 className="text-3xl font-bold font-mono mb-4 terminal-prompt">Ready to Get Started?</h2>
+          <h2 className="text-3xl font-bold font-mono mb-4 text-coder-yellow">Ready to Get Started?</h2>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">
             Let's discuss how we can work together to achieve your goals. Book a free consultation call today.
           </p>

@@ -138,21 +138,6 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-coder-yellow to-coder-yellow/80 bg-clip-text text-transparent;
-  }
-  
-  .animate-on-scroll {
-    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
-  }
-  
-  .animate-on-scroll.visible {
-    @apply opacity-100 translate-y-0;
-  }
-  
-  .typing-cursor::after {
-    content: '|';
-    @apply text-coder-yellow animate-pulse;
-  }
 }
 
 @keyframes borderShift {
