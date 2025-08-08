@@ -25,7 +25,7 @@ const Home = () => {
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold font-mono mb-6 text-coder-black dark:text-coder-white">
               <span className="terminal-prompt glitch-text">Helping Coders</span><br />
-              <span className="bracket-highlight">Learn, Build & Grow</span> 🚀
+              <span className="text-coder-yellow">Learn, Build & Grow</span> 🚀
             </h1>
             <p className="text-xl sm:text-2xl text-coder-gray-600 dark:text-coder-gray-400 mb-12 max-w-3xl mx-auto font-mono">
               <span className="typing-cursor">Explore tools, projects, and personal picks — all in one station</span>
@@ -42,11 +42,13 @@ const Home = () => {
                   </div>
                   <span className="text-coder-yellow font-mono text-sm">~/tools</span>
                 </div>
-                <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow w-fit mx-auto mb-4 rounded-xl">
-                  <Wrench className="h-8 w-8" />
+                <div className="terminal-content">
+                  <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow w-fit mx-auto mb-4 rounded-xl">
+                    <Wrench className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-semibold font-mono mb-2 text-coder-black dark:text-coder-white text-coder-yellow">Tools</h3>
+                  <p className="text-coder-gray-600 dark:text-coder-yellow/80 font-mono text-sm">$ cat curated_resources.txt</p>
                 </div>
-                <h3 className="text-xl font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">Tools</h3>
-                <p className="text-coder-gray-600 dark:text-coder-yellow/80 font-mono text-sm">$ cat curated_resources.txt</p>
               </Link>
               
               <Link to="/products" className="terminal-box text-center hover:scale-105 transition-all duration-300">
@@ -58,11 +60,13 @@ const Home = () => {
                   </div>
                   <span className="text-coder-yellow font-mono text-sm">~/products</span>
                 </div>
-                <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow w-fit mx-auto mb-4 rounded-xl">
-                  <ShoppingCart className="h-8 w-8" />
+                <div className="terminal-content">
+                  <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow w-fit mx-auto mb-4 rounded-xl">
+                    <ShoppingCart className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-semibold font-mono mb-2 text-coder-black dark:text-coder-white text-coder-yellow">Products</h3>
+                  <p className="text-coder-gray-600 dark:text-coder-yellow/80 font-mono text-sm">$ ls digital_products/</p>
                 </div>
-                <h3 className="text-xl font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">Products</h3>
-                <p className="text-coder-gray-600 dark:text-coder-yellow/80 font-mono text-sm">$ ls digital_products/</p>
               </Link>
               
               <Link to="/blogs" className="terminal-box text-center hover:scale-105 transition-all duration-300">
@@ -74,11 +78,13 @@ const Home = () => {
                   </div>
                   <span className="text-coder-yellow font-mono text-sm">~/blogs</span>
                 </div>
-                <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow w-fit mx-auto mb-4 rounded-xl">
-                  <BookOpen className="h-8 w-8" />
+                <div className="terminal-content">
+                  <div className="p-4 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow w-fit mx-auto mb-4 rounded-xl">
+                    <BookOpen className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-semibold font-mono mb-2 text-coder-black dark:text-coder-white text-coder-yellow">Blogs</h3>
+                  <p className="text-coder-gray-600 dark:text-coder-yellow/80 font-mono text-sm">$ vim latest_posts.md</p>
                 </div>
-                <h3 className="text-xl font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">Blogs</h3>
-                <p className="text-coder-gray-600 dark:text-coder-yellow/80 font-mono text-sm">$ vim latest_posts.md</p>
               </Link>
             </div>
           </div>
@@ -111,7 +117,7 @@ const Home = () => {
       {/* Newsletter CTA */}
       <section className="py-20 bg-coder-yellow/10 dark:bg-coder-yellow/5 border-t border-b border-coder-yellow/20 mx-4 rounded-3xl">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold font-mono mb-4 bracket-highlight">Join My Weekly Newsletter</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold font-mono mb-4 text-coder-yellow">Join My Weekly Newsletter</h2>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">
             Get the latest tools, tips, and insights delivered straight to your inbox every week.
           </p>

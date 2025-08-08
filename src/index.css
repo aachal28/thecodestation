@@ -52,16 +52,20 @@
   }
   
   .terminal-box {
-    @apply bg-coder-white dark:bg-coder-black border-2 border-coder-yellow/30 rounded-xl p-6 font-mono relative overflow-hidden;
+    @apply bg-coder-white dark:bg-coder-black border-2 border-coder-yellow/30 rounded-xl font-mono relative overflow-hidden;
   }
   
   .terminal-box::before {
     content: '';
-    @apply absolute top-0 left-0 w-full h-8 bg-gradient-to-r from-coder-yellow/10 dark:from-coder-yellow/20 to-transparent border-b border-coder-yellow/20;
+    @apply absolute top-0 left-0 w-full h-12 bg-gradient-to-r from-coder-yellow/10 dark:from-coder-yellow/20 to-transparent border-b border-coder-yellow/20;
   }
   
   .terminal-header {
-    @apply flex items-center justify-between mb-4 relative z-10;
+    @apply flex items-center justify-between px-4 py-3 relative z-10 h-12;
+  }
+  
+  .terminal-content {
+    @apply p-6 pt-2;
   }
   
   .terminal-dots {
@@ -114,13 +118,11 @@
   }
   
   .bracket-highlight::before {
-    content: '{ ';
-    @apply text-coder-yellow font-mono;
+    content: '';
   }
   
   .bracket-highlight::after {
-    content: ' }';
-    @apply text-coder-yellow font-mono;
+    content: '';
   }
   
   .hacker-grid {

@@ -67,7 +67,7 @@ const Products = () => {
         {/* Header */}
         <section className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold font-mono mb-4 text-coder-black dark:text-coder-white">
-            <span className="bracket-highlight">Digital Products</span> <span className="terminal-prompt">to Help You Learn & Earn</span>
+            <span className="text-coder-yellow">Digital Products</span> <span className="terminal-prompt">to Help You Learn & Earn</span>
           </h1>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 max-w-3xl mx-auto font-mono">
             Premium digital products designed to accelerate your learning and boost your productivity.
@@ -105,7 +105,7 @@ const Products = () => {
                     <span className="text-2xl font-bold font-mono text-coder-black dark:text-coder-white">{product.price}</span>
                   </div>
                   
-                  <h3 className="text-xl font-semibold font-mono text-coder-black dark:text-coder-white mb-3 bracket-highlight">{product.title}</h3>
+                  <h3 className="text-xl font-semibold font-mono text-coder-black dark:text-coder-white mb-3 text-coder-yellow">{product.title}</h3>
                   <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-6 font-mono text-sm">{product.description}</p>
                   
                   {/* CTA Button */}

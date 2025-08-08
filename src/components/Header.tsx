@@ -25,7 +25,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2 text-xl font-bold font-mono text-coder-yellow hover:animate-glow transition-all duration-300">
             <Code2 className="h-8 w-8" />
-            <span className="bracket-highlight">TheCodeStation</span>
+            <span className="text-coder-yellow">TheCodeStation</span>
           </Link>
 
           {/* Desktop Navigation */}

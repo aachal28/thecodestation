@@ -55,7 +55,7 @@ const MyStation = () => {
         {/* Header */}
         <section className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold font-mono mb-4 text-coder-black dark:text-coder-white">
-            <span className="bracket-highlight">My</span> <span className="terminal-prompt">Station</span>
+            <span className="text-coder-yellow">My</span> <span className="terminal-prompt">Station</span>
           </h1>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 max-w-3xl mx-auto font-mono">
             Personal digital shelf - clean, fun, and scrollable. Everything that inspires and powers my work.
@@ -77,16 +77,18 @@ const MyStation = () => {
               </div>
               <span className="text-coder-yellow font-mono text-sm">~/music/playlist.m3u</span>
             </div>
-            <ul className="space-y-3">
-              {favSongs.map((song, index) => (
-                <li key={index} className="flex items-center text-coder-gray-600 dark:text-coder-yellow/80 font-mono">
-                  <span className="w-6 h-6 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow text-sm flex items-center justify-center mr-4 rounded-lg">
-                    {index + 1}
-                  </span>
-                  {song}
-                </li>
-              ))}
-            </ul>
+           <div className="terminal-content">
+             <ul className="space-y-3">
+               {favSongs.map((song, index) => (
+                 <li key={index} className="flex items-center text-coder-gray-600 dark:text-coder-yellow/80 font-mono">
+                   <span className="w-6 h-6 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow text-sm flex items-center justify-center mr-4 rounded-lg">
+                     {index + 1}
+                   </span>
+                   {song}
+                 </li>
+               ))}
+             </ul>
+           </div>
           </div>
         </section>
 
@@ -103,6 +105,7 @@ const MyStation = () => {
                   <Book className="h-8 w-8 text-coder-yellow" />
                 </div>
                 <h3 className="font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">{book.title}</h3>
+                <h3 className="font-semibold font-mono mb-2 text-coder-black dark:text-coder-white text-coder-yellow">{book.title}</h3>
                 <p className="text-sm text-coder-gray-600 dark:text-coder-gray-400 font-mono mb-4">{book.author}</p>
                 <a href={book.link} className="text-coder-yellow hover:text-coder-yellow/80 font-mono text-sm transition-colors duration-300">
                   View on Amazon →
@@ -121,7 +124,7 @@ const MyStation = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {favShows.map((show, index) => (
               <div key={index} className="card p-6">
-                <h3 className="text-lg font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">{show.title}</h3>
+                <h3 className="text-lg font-semibold font-mono mb-2 text-coder-black dark:text-coder-white text-coder-yellow">{show.title}</h3>
                 <p className="text-coder-gray-600 dark:text-coder-gray-400 font-mono text-sm">{show.note}</p>
               </div>
             ))}
@@ -138,7 +141,7 @@ const MyStation = () => {
             {dailyTools.map((tool, index) => (
               <div key={index} className="card p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-semibold font-mono text-coder-black dark:text-coder-white bracket-highlight">{tool.name}</h3>
+                  <h3 className="font-semibold font-mono text-coder-black dark:text-coder-white text-coder-yellow">{tool.name}</h3>
                   {tool.affiliate && (
                     <span className="px-2 py-1 bg-coder-yellow/20 text-coder-yellow border border-coder-yellow/30 text-xs font-mono rounded-full">
                       Affiliate
@@ -169,13 +172,15 @@ const MyStation = () => {
               </div>
               <span className="text-coder-yellow font-mono text-sm">~/setup/hardware.list</span>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {deskSetup.map((item, index) => (
-                <div key={index} className="flex items-center p-4 bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 rounded-xl">
-                  <span className="w-2 h-2 bg-coder-yellow mr-3 rounded-full"></span>
-                  <span className="font-mono text-coder-gray-700 dark:text-coder-yellow/90">{item}</span>
-                </div>
-              ))}
+            <div className="terminal-content">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {deskSetup.map((item, index) => (
+                  <div key={index} className="flex items-center p-4 bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 rounded-xl">
+                    <span className="w-2 h-2 bg-coder-yellow mr-3 rounded-full"></span>
+                    <span className="font-mono text-coder-gray-700 dark:text-coder-yellow/90">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -206,7 +211,7 @@ const MyStation = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <div key={index} className="card p-6">
-                <h3 className="text-lg font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">{project.title}</h3>
+                <h3 className="text-lg font-semibold font-mono mb-2 text-coder-black dark:text-coder-white text-coder-yellow">{project.title}</h3>
                 <p className="text-coder-gray-600 dark:text-coder-gray-400 font-mono text-sm mb-4">{project.tech}</p>
                 <button className="text-coder-yellow hover:text-coder-yellow/80 font-mono text-sm transition-colors duration-300">
                   View Project →
@@ -219,7 +224,7 @@ const MyStation = () => {
         {/* Book a Call */}
         <section className="text-center bg-coder-yellow/10 dark:bg-coder-yellow/5 border border-coder-yellow/20 p-12 rounded-3xl">
           <Calendar className="h-16 w-16 text-coder-yellow mx-auto mb-6" />
-          <h2 className="text-3xl font-bold font-mono mb-4 bracket-highlight">Book a Call</h2>
+          <h2 className="text-3xl font-bold font-mono mb-4 text-coder-yellow">Book a Call</h2>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 mb-8 max-w-2xl mx-auto font-mono">
             Ready to work together? Let's schedule a call to discuss your project or collaboration ideas.
           </p>

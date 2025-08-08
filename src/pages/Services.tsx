@@ -41,7 +41,7 @@ const Services = () => {
         {/* Header */}
         <section className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold font-mono mb-4 text-coder-black dark:text-coder-white">
-            <span className="terminal-prompt">Let's Build or</span> <span className="bracket-highlight">Grow Together</span> 💼
+            <span className="terminal-prompt">Let's Build or</span> <span className="text-coder-yellow">Grow Together</span> 💼
           </h1>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 max-w-3xl mx-auto font-mono">
             Professional services to help you build, grow, and succeed in the digital world.
@@ -61,19 +61,21 @@ const Services = () => {
                   </div>
                   <span className="text-coder-yellow font-mono text-sm">~/services/{service.title.toLowerCase().replace(/[^a-z0-9]/g, '_')}.sh</span>
                 </div>
-                <div className="flex items-center mb-6">
-                  <div className="p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mr-4 rounded-xl">
-                    {service.icon}
+                <div className="terminal-content">
+                  <div className="flex items-center mb-6">
+                    <div className="p-3 bg-coder-yellow/20 border border-coder-yellow/30 text-coder-yellow mr-4 rounded-xl">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl font-bold font-mono text-coder-black dark:text-coder-white text-coder-yellow">{service.title}</h3>
                   </div>
-                  <h3 className="text-xl font-bold font-mono text-coder-black dark:text-coder-white bracket-highlight">{service.title}</h3>
+                  
+                  <p className="text-coder-gray-600 dark:text-coder-yellow/80 mb-8 text-lg font-mono">{service.description}</p>
+                  
+                  <button className="btn-primary w-full flex items-center justify-center">
+                    <Calendar className="mr-2 h-5 w-5" />
+                    {service.cta}
+                  </button>
                 </div>
-                
-                <p className="text-coder-gray-600 dark:text-coder-yellow/80 mb-8 text-lg font-mono">{service.description}</p>
-                
-                <button className="btn-primary w-full flex items-center justify-center">
-                  <Calendar className="mr-2 h-5 w-5" />
-                  {service.cta}
-                </button>
               </div>
             ))}
           </div>

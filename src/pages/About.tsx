@@ -43,7 +43,7 @@ const About = () => {
             <span className="text-4xl font-bold font-mono text-coder-black">AP</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold font-mono mb-4 text-coder-black dark:text-coder-white">
-            <span className="terminal-prompt">Hi, I'm</span> <span className="bracket-highlight">Aachal Pardeshi</span>
+            <span className="terminal-prompt">Hi, I'm</span> <span className="text-coder-yellow">Aachal Pardeshi</span>
           </h1>
           <p className="text-xl text-coder-gray-600 dark:text-coder-gray-400 max-w-3xl mx-auto font-mono">
             Developer, Content Creator, and Tech Enthusiast helping fellow coders navigate the ever-evolving world of technology.
@@ -61,10 +61,12 @@ const About = () => {
               </div>
               <span className="text-coder-yellow font-mono text-sm">~/mission.txt</span>
             </div>
-            <h2 className="text-3xl font-bold font-mono mb-6 bracket-highlight">My Mission</h2>
-            <p className="text-2xl text-coder-gray-700 dark:text-coder-yellow/90 font-mono">
-              "To simplify tech & help coders grow faster."
-            </p>
+            <div className="terminal-content">
+              <h2 className="text-3xl font-bold font-mono mb-6 text-coder-yellow">My Mission</h2>
+              <p className="text-2xl text-coder-gray-700 dark:text-coder-yellow/90 font-mono">
+                "To simplify tech & help coders grow faster."
+              </p>
+            </div>
           </div>
         </section>
 
@@ -80,21 +82,23 @@ const About = () => {
               </div>
               <span className="text-coder-yellow font-mono text-sm">~/journey.log</span>
             </div>
-            <p className="text-lg text-coder-yellow/80 mb-6 leading-relaxed font-mono">
-              My coding journey began with curiosity and a laptop. What started as simple HTML pages evolved into a passion for creating digital solutions that make a difference.
-            </p>
-            <p className="text-lg text-coder-gray-600 dark:text-coder-yellow/80 mb-6 leading-relaxed font-mono">
-              TheCodeStation was born from my desire to simplify the complex world of technology. I believe that with the right resources, guidance, and community, every developer can achieve their goals faster.
-            </p>
-            <p className="text-lg text-coder-gray-600 dark:text-coder-yellow/80 leading-relaxed font-mono">
-              Today, I create content that bridges the gap between cutting-edge technology and practical implementation, helping thousands of developers stay ahead in their careers.
-            </p>
+            <div className="terminal-content">
+              <p className="text-lg text-coder-yellow/80 mb-6 leading-relaxed font-mono">
+                My coding journey began with curiosity and a laptop. What started as simple HTML pages evolved into a passion for creating digital solutions that make a difference.
+              </p>
+              <p className="text-lg text-coder-gray-600 dark:text-coder-yellow/80 mb-6 leading-relaxed font-mono">
+                TheCodeStation was born from my desire to simplify the complex world of technology. I believe that with the right resources, guidance, and community, every developer can achieve their goals faster.
+              </p>
+              <p className="text-lg text-coder-gray-600 dark:text-coder-yellow/80 leading-relaxed font-mono">
+                Today, I create content that bridges the gap between cutting-edge technology and practical implementation, helping thousands of developers stay ahead in their careers.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* Past Collaborations */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold font-mono mb-8 text-center bracket-highlight">Past Collaborations</h2>
+          <h2 className="text-3xl font-bold font-mono mb-8 text-center text-coder-yellow">Past Collaborations</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {collaborations.map((brand, index) => (
               <div key={index} className="card p-4 text-center">
@@ -124,7 +128,7 @@ const About = () => {
                     {project.time}
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold font-mono mb-2 text-coder-black dark:text-coder-white bracket-highlight">{project.title}</h3>
+                <h3 className="text-xl font-semibold font-mono mb-2 text-coder-black dark:text-coder-white text-coder-yellow">{project.title}</h3>
                 <p className="text-coder-gray-600 dark:text-coder-gray-400 mb-4 font-mono text-sm">{project.description}</p>
                 <div className="flex gap-2">
                   {project.links.live && (
