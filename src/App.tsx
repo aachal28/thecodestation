@@ -10,6 +10,7 @@ import Resources from './pages/Resources';
 import Products from './pages/Products';
 import Newsletter from './pages/Newsletter';
 import Blogs from './pages/Blogs';
+import Tutorials from './pages/Tutorials';
 import MyStation from './pages/MyStation';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
               <Route path="/products" element={<Products />} />
               <Route path="/my-station" element={<MyStation />} />
               <Route path="/newsletter" element={<Newsletter />} />
+              <Route path="/tutorials" element={<Tutorials />} />
               <Route path="/blogs" element={<Blogs />} />
             </Routes>
           </main>
